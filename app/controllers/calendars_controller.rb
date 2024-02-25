@@ -11,7 +11,7 @@ class CalendarsController < ApplicationController
 
         calendar = Icalendar::Calendar.parse(response.payload).first.to_ical
 
-        send_data calendar, filename: 'event.ics', type: 'application/octet-stream', disposition: 'attachment'
+        send_data calendar, type: 'text/calendar', filename: 'event.ics'
     end
 
     private

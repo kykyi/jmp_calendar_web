@@ -33,3 +33,5 @@ group :test do
   gem "selenium-webdriver"
   gem "rspec"
 end
+
+gem "tailwindcss-rails", "~> 2.3"
