@@ -5,7 +5,7 @@ class CalendarsController < ApplicationController
     def create
         if form_params[:pbl] == "" || form_params[:clin] == ""
             flash[:alert] = "You must choose both a pbl and a clin"
-            redirect_to root and return
+            redirect_to :root and return
         end
 
         response = Aws::LambdaClient.call("jmp_calendar", {
@@ -22,7 +22,7 @@ class CalendarsController < ApplicationController
         rescue StandardError => e
             Sentry.capture_exception(e)
             flash[:alert] = "Something went wrong"
-            redirect_to root and return
+            redirect_to :root and return
     end
 
     private
