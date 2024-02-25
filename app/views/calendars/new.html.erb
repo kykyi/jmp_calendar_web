@@ -3,17 +3,23 @@
   <p class="text-gray-600">Generate an <strong>ics</strong> file which can be imported into any calendar app (Gmail, apple, outlook etc). Note that only events in the <strong>future</strong> and for the specified <strong>MEDI1101A Timetable Weeks 1 to 3 2024 - Callaghan & Central Coast.xlsx</strong> file are generated!</p>
   <br/>
   <p class="text-gray-600">This will be udpated as future timetable versions are released.</p>
+  <% if flash[:alert] %>
+    <div class="text-red-600">
+    <br/>
+    <p class="text-red-600"><%= flash[:alert] %></p>
+    </div>
+  <% end %>
   <%= form_with url: calendars_path, method: :post, local: true, data: { turbo: false }, class: "space-y-4 md:space-y-6" do |form| %>
 
     <div class="flex flex-col md:flex-row md:space-x-4">
       <div class="flex-1">
         <%= form.label :pbl, 'PBL', class: "block text-md md:text-lg font-medium text-gray-800" %>
-        <%= form.select :pbl, ('A'..'Q').to_a.map { |letter| [letter, letter] }, { prompt: 'Select PBL' }, class: "mt-1 block w-full py-2 px-3 border border-gray-200 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-base md:text-md" %>
+        <%= form.select :pbl, ('A'..'Q').to_a.map { |letter| [letter, letter] }, { prompt: 'Select PBL' }, id: "pbl", class: "mt-1 block w-full py-2 px-3 border border-gray-200 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-base md:text-md" %>
       </div>
 
       <div class="flex-1">
         <%= form.label :clin, 'CLIN', class: "block text-md md:text-lg font-medium text-gray-800" %>
-        <%= form.select :clin, (1..20).to_a.map { |number| [number, number] }, { prompt: 'Select CLIN' }, class: "mt-1 block w-full py-2 px-3 border border-gray-200 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-base md:text-md" %>
+        <%= form.select :clin, (1..20).to_a.map { |number| [number, number] }, { prompt: 'Select CLIN' }, id: "clin", class: "mt-1 block w-full py-2 px-3 border border-gray-200 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-base md:text-md" %>
       </div>
     </div>
 
