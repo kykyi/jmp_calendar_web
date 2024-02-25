@@ -11,7 +11,3 @@ services:
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
-      - key: AWS_LAMBDA_SECRET_KEY
-        value: <%= ENV.fetch("AWS_LAMBDA_SECRET_KEY") %>
-      - key: AWS_LAMBDA_ACCESS_KEY
-        value: <%= ENV.fetch("AWS_LAMBDA_ACCESS_KEY") %>
