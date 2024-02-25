@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: jmp-timetable-generator
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "bundle exec rails server"
+    envVars:
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default
+      - key: AWS_LAMBDA_SECRET_KEY
+        value: <%= ENV.fetch("AWS_LAMBDA_SECRET_KEY") %>
+      - key: AWS_LAMBDA_ACCESS_KEY
+        value: <%= ENV.fetch("AWS_LAMBDA_ACCESS_KEY") %>
