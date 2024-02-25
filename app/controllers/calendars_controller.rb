@@ -1,4 +1,4 @@
-class GeneratorController < ApplicationController
+class CalendarsController < ApplicationController
     def new
     end
 
@@ -11,7 +11,7 @@ class GeneratorController < ApplicationController
 
         calendar = Icalendar::Calendar.parse(response.payload).first.to_ical
 
-        send_data ics_file, filename: 'event.ics', type: 'text/calendar', disposition: 'attachment'
+        send_data calendar, filename: 'event.ics', type: 'application/octet-stream', disposition: 'attachment'
     end
 
     private

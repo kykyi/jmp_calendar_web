@@ -1,0 +1,15 @@
+<%= form_with url: calendars_path, method: :post, local: true do |form| %>
+  <div class="field">
+    <%= form.label :pbl, 'PBL:' %>
+    <%= form.select :pbl, ('A'..'Q').to_a.map { |letter| [letter, letter] }, { prompt: 'Select PBL' } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clin, 'CLIN:' %>
+    <%= form.select :clin, (1..20).to_a.map { |number| [number, number] }, { prompt: 'Select CLIN' } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Submit" %>
+  </div>
+<% end %>
