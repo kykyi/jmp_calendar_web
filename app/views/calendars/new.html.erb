@@ -12,6 +12,12 @@
   <%= form_with url: calendars_path, method: :post, local: true, data: { turbo: false }, class: "space-y-4 md:space-y-6" do |form| %>
 
     <div class="flex flex-col md:flex-row md:space-x-4">
+
+      <div class="flex-1">
+        <%= form.label :spreadsheet, 'Spreadsheet', class: "block text-md md:text-lg font-medium text-gray-800" %>
+        <%= form.select :spreadsheet, @spreadsheet_options, { prompt: 'Select spreadsheet' }, id: "spreadsheet", class: "mt-1 block w-full py-2 px-3 border border-gray-200 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-base md:text-md" %>
+      </div>
+
       <div class="flex-1">
         <%= form.label :pbl, 'PBL', class: "block text-md md:text-lg font-medium text-gray-800" %>
         <%= form.select :pbl, ('A'..'Q').to_a.map { |letter| [letter, letter] }, { prompt: 'Select PBL' }, id: "pbl", class: "mt-1 block w-full py-2 px-3 border border-gray-200 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-base md:text-md" %>

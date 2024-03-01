@@ -1,5 +1,8 @@
 class CalendarsController < ApplicationController
     def new
+        s3 = Aws::S3::Client.new
+        items = s3.list_objects(bucket: 'jmp-timetables', max_keys: 50).first.contents
+        @spreadsheet_options = items.map(&:key)
     end
 
     def create
@@ -11,7 +14,7 @@ class CalendarsController < ApplicationController
         response = Aws::LambdaClient.call("jmp_calendar", {
             pbl: form_params[:pbl],
             clin: form_params[:clin],
-            key: "MEDI1101A Timetable Weeks 1 to 3 2024 - Callaghan & Central Coast.xlsx"
+            key: form_params[:spreadsheet]
         })
 
         calendar = Icalendar::Calendar.parse(response.payload).first.to_ical
@@ -28,6 +31,6 @@ class CalendarsController < ApplicationController
     private
 
     def form_params
-        params.permit(:clin, :pbl)
+        params.permit(:clin, :pbl, :spreadsheet)
     end
 end
