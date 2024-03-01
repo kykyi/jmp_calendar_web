@@ -1,6 +1,6 @@
 class CalendarsController < ApplicationController
     def new
-        s3 = Aws::S3::Client.new
+        s3 = Aws::S3::Client.new(region: "ap-southeast-2")
         items = s3.list_objects(bucket: 'jmp-timetables', max_keys: 50).first.contents
         @spreadsheet_options = items.map(&:key)
     end
