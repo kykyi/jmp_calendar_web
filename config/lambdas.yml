@@ -6,7 +6,7 @@ default: &default
   lambdas:
     - name: jmp_calendar
       function_name: jmp-calendar-creator-JmpCalendarCreator
-      version: 12
+      version: 13
 
 development:
   <<: *default
