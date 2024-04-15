@@ -31,9 +31,8 @@ group :development do
 end
 
 group :test do
-  gem "capybara"
-  gem "selenium-webdriver"
   gem "rspec"
+  gem 'rspec-rails', '~> 6.1.0'
 end
 
 gem "tailwindcss-rails", "~> 2.3"
