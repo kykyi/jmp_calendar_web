@@ -21,8 +21,14 @@ module Calendar
                 time = row["Time"]
                 domain = row["Domain"]
                 date = row["Date"]
+                venue = row["Venue"]
+                url = row["url"]
+                name = row["Name of Activity "]
 
                 return unless Calendar::YearOne::CheckValidEventService.is_valid?(group: group, pbl: pbl, clin: clin, group_prefix: group_prefix)
+                return if !venue && !date && !time
+                return unless date > TZInfo::Timezone.get('Australia/Sydney').now
+
 
                 if time.downcase.include?("self") && time.downcase.include?("directed")
                     name = "#{name} (self directed)"
@@ -33,16 +39,17 @@ module Calendar
                 name = "#{name} - #{domain} (#{group})"
 
                 calendar.event do |event|
-                    event.dtstart = Icalendar::Values::Date.new('20050428')
-                    event.dtend   = Icalendar::Values::Date.new('20050429')
+                    event.dtstart = ::TimeService.parse_time(date, time, true)
+                    event.dtend   = ::TimeService.parse_time(date, time, false)
                     event.summary = name
+                    event.location = venue
+                    event.url = url if url
                 end
             end
 
             private
 
             attr_reader :pbl, :clin, :row, :calendar
-
         end
     end
 end
