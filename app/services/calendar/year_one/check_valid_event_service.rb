@@ -20,10 +20,10 @@ module Calendar
             private
 
             def is_valid?
-                @group = @group.downcase
-                @pbl = @pbl.downcase
-                @clin = @clin.downcase
-                @group_prefix = @group_prefix.downcase
+                @group = @group.downcase if @group
+                @pbl = @pbl.downcase if @pbl
+                @clin = @clin.downcase if @clin
+                @group_prefix = @group_prefix.downcase if @group_prefix
 
                 return true if @group_prefix == "all"
 
@@ -43,13 +43,13 @@ module Calendar
 
                 return true if @group == @pbl
 
-                @group = @group.split(/\W+/)
+                @group = @group&.split(/\W+/)
 
-                if @group.include?("pbl") && @group.include?(@pbl)
+                if @group&.include?("pbl") && @group&.include?(@pbl)
                   return true
                 end
 
-                if @group.include?("clin") && @group.include?(@clin)
+                if @group&.include?("clin") && @group&.include?(@clin)
                   return true
                 end
 

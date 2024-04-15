@@ -1,6 +1,11 @@
 class TimeService
     def self.parse_time(date, time_str, is_start, time_zone="Australia/Sydney")
-        date_str = Date.strptime(date, '%Y-%m-%d')
+        if date.is_a?(Date)
+            date_str = date.strftime('%Y-%m-%d')
+        else
+            date_str = date
+        end
+
         time_str.downcase!
 
         time_str = '12pm - 1pm' if time_str == 'self-directed'

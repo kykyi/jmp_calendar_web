@@ -32,7 +32,7 @@ module Calendar
 
                 if time.downcase.include?("self") && time.downcase.include?("directed")
                     name = "#{name} (self directed)"
-                elif !mandatory
+                elsif !mandatory
                     name = "#{name} (not mandatory)"
                 end
 
@@ -41,10 +41,12 @@ module Calendar
                 calendar.event do |event|
                     event.dtstart = ::TimeService.parse_time(date, time, true)
                     event.dtend   = ::TimeService.parse_time(date, time, false)
-                    event.summary = name
+                    event.summary = name.gsub("\n", "")
                     event.location = venue
                     event.url = url if url
                 end
+
+
             end
 
             private
