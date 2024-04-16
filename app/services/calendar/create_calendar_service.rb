@@ -28,6 +28,8 @@ module Calendar
                 next if index == 0 || index == 1
                 row = column_headers.zip(row).to_h
 
+
+                Calendar::YearTwo::CreateEventService.call(pbl: pbl, row: row, calendar: calendar) if year == 2
                 Calendar::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row, calendar: calendar) if year == 1
             end
 
