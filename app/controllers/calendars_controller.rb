@@ -21,13 +21,17 @@ class CalendarsController < ApplicationController
         calendar = Calendar::CreateCalendarService.call(
             pbl: form_params[:pbl],
             clin: form_params[:clin],
-            year: form_params[:year],
+            year: form_params[:year].to_i,
             spreadsheet: response.xlsx
         )
 
         calendar = calendar.to_ical
 
-        calendar_name = "pbl_#{form_params[:pbl]}_clin_#{form_params[:clin]}_#{Time.zone.now.strftime("%Y%m%d%H%M%S")}.ics"
+        if form_params[:year].to_i == 1
+            calendar_name = "pbl_#{form_params[:pbl]}_clin_#{form_params[:clin]}_#{Time.zone.now.strftime("%Y%m%d%H%M%S")}.ics"
+        else
+            calendar_name = "pbl_#{form_params[:pbl]}_#{Time.zone.now.strftime("%Y%m%d%H%M%S")}.ics"
+        end
 
         send_data calendar, type: 'text/calendar', filename: calendar_name
 

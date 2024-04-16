@@ -15,12 +15,12 @@ module Calendar
                 campus = row["Campus"]
                 group = row["Group"]
                 venue = row["Venue/\nZoom Link"]
-                mandatory = row["Attendance"]
+                mandatory = row["Attendance "] == "MAND" # the space is intentional
                 time = row["Time"]
                 date = row["Date"]
                 domain = row["Domain"]
                 typex = row["Type"]
-
+                name = row["Session"]
 
                 return unless Calendar::YearTwo::CheckValidEventService.is_valid?(campus: campus, pbl: pbl, group: group)
                 return if !venue && !date && !time
