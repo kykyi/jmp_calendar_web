@@ -6,8 +6,13 @@ class CalendarsController < ApplicationController
     end
 
     def create
-        if form_params[:pbl] == "" || form_params[:clin] == ""
-            flash[:alert] = "You must choose both a pbl and a clin"
+        if form_params[:year] == "1" && (form_params[:pbl] == "" || form_params[:clin] == "")
+            flash[:alert] = "Year 1 students must choose both a pbl and a clin"
+            redirect_to :root and return
+        end
+
+        if form_params[:year] == "2" && form_params[:pbl] == ""
+            flash[:alert] = "Year 2 students must choose a pbl"
             redirect_to :root and return
         end
 
