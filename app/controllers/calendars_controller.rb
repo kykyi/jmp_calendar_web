@@ -16,7 +16,7 @@ class CalendarsController < ApplicationController
         calendar = Calendar::CreateCalendarService.call(
             pbl: form_params[:pbl],
             clin: form_params[:clin],
-            year: 1,
+            year: form_params[:year],
             spreadsheet: response.xlsx
         )
 
@@ -25,7 +25,8 @@ class CalendarsController < ApplicationController
         calendar_name = "pbl_#{form_params[:pbl]}_clin_#{form_params[:clin]}_#{Time.zone.now.strftime("%Y%m%d%H%M%S")}.ics"
 
         send_data calendar, type: 'text/calendar', filename: calendar_name
-        rescue StandardError => e
+
+    rescue StandardError => e
             Sentry.capture_exception(e)
             flash[:alert] = "Something went wrong"
             redirect_to :root and return
@@ -34,6 +35,6 @@ class CalendarsController < ApplicationController
     private
 
     def form_params
-        params.require(:user_input).permit(:clin, :pbl, :spreadsheet)
+        params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year)
     end
 end
