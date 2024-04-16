@@ -13,6 +13,10 @@ module Calendar
 
         def call
             calendar = Icalendar::Calendar.new
+            calendar.timezone do |t|
+                t.tzid = "Australia/Sydney"
+            end
+
             column_headers = spreadsheet.sheet(0).row(2)
 
             column_headers = column_headers.map { |header| header.gsub(/<[^>]*>/, "") }
@@ -22,14 +26,6 @@ module Calendar
                 row = column_headers.zip(row).to_h
 
                 Calendar::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row, calendar: calendar) if year == 1
-            end
-
-            # To sort the events by datetime, mostly for testing!
-            events = calendar.events.sort_by { |e| [e.name.downcase, e.dtstart] }
-            calendar = Icalendar::Calendar.new
-
-            events.each do |event|
-                calendar.add_event(event)
             end
 
             calendar
