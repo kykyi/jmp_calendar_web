@@ -43,6 +43,7 @@ module Calendar
                     event.dtend   = ::TimeService.parse_time(date, time, false)
                     event.summary = name.strip.squish
                     event.location = venue
+                    # TODO: Add zoom links
                     event.url = url if url
                 end
             end

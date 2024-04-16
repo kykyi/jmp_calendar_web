@@ -16,8 +16,13 @@ module Calendar
             calendar.timezone do |t|
                 t.tzid = "Australia/Sydney"
             end
+            if year == 1
+                column_headers = spreadsheet.sheet(0).row(2)
+            end
 
-            column_headers = spreadsheet.sheet(0).row(2)
+            if year == 2
+                column_headers = spreadsheet.sheet(0).row(1)
+            end
 
             column_headers = column_headers.map do |header|
                 header = header.to_s
@@ -25,7 +30,14 @@ module Calendar
             end
 
             spreadsheet.sheet(0).each_with_index do |row, index|
-                next if index == 0 || index == 1
+                if year == 1
+                    next if index == 0 || index == 1
+                end
+
+                if year == 2
+                    next if index == 0
+                end
+
                 row = column_headers.zip(row).to_h
 
 

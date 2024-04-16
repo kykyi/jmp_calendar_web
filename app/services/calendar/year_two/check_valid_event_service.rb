@@ -43,10 +43,11 @@ module Calendar
 
                 return true if @group == @pbl && @group != ""
 
-                if @group.include?("-")
+                if @group&.include?("-")
                     first_pbl, second_pbl = @group.split("-")
                     return true if (first_pbl..second_pbl).include?(@pbl)
                 end
+
                 return false
             end
         end

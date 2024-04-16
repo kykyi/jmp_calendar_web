@@ -8,7 +8,8 @@ class TimeService
 
         time_str.downcase!
 
-        time_str = '12pm - 1pm' if time_str == 'self-directed'
+        # Allow for silly times given in the time column
+        time_str = '12pm - 1pm' if ['self-directed', 'self directed', 'as timetabled on canvas'].include?(time_str)
 
         start_time, end_time = if time_str.include?(' - ')
                                     time_str.split(' - ')
