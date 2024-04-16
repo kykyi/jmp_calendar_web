@@ -16,6 +16,8 @@ module Calendar
             calendar.timezone do |t|
                 t.tzid = "Australia/Sydney"
             end
+
+
             if year == 1
                 column_headers = spreadsheet.sheet(0).row(2)
             end

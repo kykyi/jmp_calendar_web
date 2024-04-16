@@ -39,8 +39,12 @@ module Calendar
                 name = "#{name} - #{domain} (#{group})"
 
                 calendar.event do |event|
-                    event.dtstart = ::TimeService.parse_time(date, time, true)
-                    event.dtend   = ::TimeService.parse_time(date, time, false)
+                    tzid = "Australia/Sydney"
+                    tz = TZInfo::Timezone.get tzid
+
+                    event.dtstart = Icalendar::Values::DateTime.new(::TimeService.parse_time(date, time, true), 'tzid' => tzid)
+                    event.dtend = Icalendar::Values::DateTime.new(::TimeService.parse_time(date, time, false), 'tzid' => tzid)
+
                     event.summary = name.strip.squish
                     event.location = venue
                     # TODO: Add zoom links
