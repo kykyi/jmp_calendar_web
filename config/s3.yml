@@ -1,12 +1,7 @@
 default: &default
   region: "ap-southeast-2"
-  http_read_timeout: 120
   access_key_id: <%= ENV.fetch("AWS_LAMBDA_ACCESS_KEY") %>
   secret_access_key: <%= ENV.fetch("AWS_LAMBDA_SECRET_KEY") %>
-  lambdas:
-    - name: jmp_calendar
-      function_name: jmp-calendar-creator-JmpCalendarCreator
-      version: 15
 
 development:
   <<: *default

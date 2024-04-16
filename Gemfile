@@ -14,7 +14,7 @@ gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
-gem 'aws-sdk-lambda'
+gem 'aws-sdk-s3'
 gem "icalendar"
 gem 'aws-sdk-s3'
 gem 'pry'
@@ -30,6 +30,8 @@ end
 
 group :development do
   gem "web-console"
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do

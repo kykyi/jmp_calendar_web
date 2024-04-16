@@ -19,7 +19,10 @@ module Calendar
 
             column_headers = spreadsheet.sheet(0).row(2)
 
-            column_headers = column_headers.map { |header| header.gsub(/<[^>]*>/, "") }
+            column_headers = column_headers.map do |header|
+                header = header.to_s
+                header.gsub(/<[^>]*>/, "")
+            end
 
             spreadsheet.sheet(0).each_with_index do |row, index|
                 next if index == 0 || index == 1

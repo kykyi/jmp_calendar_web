@@ -11,13 +11,16 @@ class CalendarsController < ApplicationController
             redirect_to :root and return
         end
 
-        response = Aws::LambdaClient.call("jmp_calendar", {
+        response = Aws::S3SpreadsheetClient.call("jmp-timetables", form_params[:spreadsheet])
+
+        calendar = Calendar::CreateCalendarService.call(
             pbl: form_params[:pbl],
             clin: form_params[:clin],
-            key: form_params[:spreadsheet]
-        })
+            year: 1,
+            spreadsheet: response.xlsx
+        )
 
-        calendar = Icalendar::Calendar.parse(response.payload).first.to_ical
+        calendar = calendar.to_ical
 
         calendar_name = "pbl_#{form_params[:pbl]}_clin_#{form_params[:clin]}_#{Time.zone.now.strftime("%Y%m%d%H%M%S")}.ics"
 
@@ -31,6 +34,6 @@ class CalendarsController < ApplicationController
     private
 
     def form_params
-        params.permit(:clin, :pbl, :spreadsheet)
+        params.require(:user_input).permit(:clin, :pbl, :spreadsheet)
     end
 end
