@@ -1,5 +1,5 @@
 class TimeService
-    def self.parse_time(date, time_str, is_start, time_zone="Australia/Sydney")
+    def self.parse_time(date, time_str, is_start)
         if date.is_a?(Date)
             date_str = date.strftime('%Y-%m-%d')
         else
@@ -31,6 +31,6 @@ class TimeService
         time_format = chosen_time.include?('.') ? '%Y-%m-%d %I.%M%p' : '%Y-%m-%d %I%p'
         time_obj = Time.strptime("#{date_str} #{chosen_time}", time_format)
 
-        time_obj.in_time_zone(time_zone).to_datetime
+        time_obj.to_datetime
     end
 end

@@ -15,7 +15,7 @@ module Calendar
                 campus = row["Campus"]
                 group = row["Group"]
                 venue = row["Venue/\nZoom Link"]
-                mandatory = row["Attendance "] == "MAND" # the space is intentional
+                mandatory = row["Attendance "] == "MAND" # the space
                 time = row["Time"]
                 date = row["Date"]
                 domain = row["Domain"]
@@ -30,14 +30,18 @@ module Calendar
                 if time.downcase.include?("self") && time.downcase.include?("directed")
                     name = "#{name} (self directed)"
                 elsif !mandatory
+                    raise StandardError
                     name = "#{name} (not mandatory)"
                 end
 
                 name = "#{name} #{typex} - #{domain} (#{campus})"
 
                 calendar.event do |event|
-                    event.dtstart = ::TimeService.parse_time(date, time, true)
-                    event.dtend   = ::TimeService.parse_time(date, time, false)
+                    tzid = "Australia/Sydney"
+
+                    event.dtstart = Icalendar::Values::DateTime.new(::TimeService.parse_time(date, time, true), 'tzid' => tzid)
+                    event.dtend = Icalendar::Values::DateTime.new(::TimeService.parse_time(date, time, false), 'tzid' => tzid)
+
                     event.summary = name.strip.squish
                     event.location = venue
                     # TODO: Add zoom links

@@ -40,8 +40,6 @@ module Calendar
 
                 calendar.event do |event|
                     tzid = "Australia/Sydney"
-                    tz = TZInfo::Timezone.get tzid
-
 
                     event.dtstart = Icalendar::Values::DateTime.new(::TimeService.parse_time(date, time, true), 'tzid' => tzid)
                     event.dtend = Icalendar::Values::DateTime.new(::TimeService.parse_time(date, time, false), 'tzid' => tzid)
