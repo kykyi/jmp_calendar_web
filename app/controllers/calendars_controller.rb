@@ -2,6 +2,7 @@ class CalendarsController < ApplicationController
     def new
         s3 = Aws::S3::Client.new(region: "ap-southeast-2", access_key_id: ENV["AWS_LAMBDA_ACCESS_KEY"],secret_access_key: ENV["AWS_LAMBDA_SECRET_KEY"])
         items = s3.list_objects(bucket: 'jmp-timetables', max_keys: 50).first.contents
+        items.sort_by!(&:last_modified).reverse!
         @spreadsheet_options = items.map(&:key)
     end
 
