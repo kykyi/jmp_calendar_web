@@ -1,5 +1,6 @@
 module Calendar
     module YearOne
+      module Une
         class CheckValidEventService
             def self.is_valid?(group:, pbl:, clin:, group_prefix:)
                 new(group, pbl, clin, group_prefix).call
@@ -27,18 +28,18 @@ module Calendar
 
                 return true if @group_prefix == "all"
 
-                if ["a", "b", "c", "d"].include?(@pbl) && ["1", "2", "3", "4"].include?(@clin)
-                  campus = "central coast"
-                else
-                  campus = "callaghan"
+
+                if ("a".."h").to_a.include?(@pbl)
+                    return false
                 end
 
-                if campus == "callaghan" && @group_prefix == "cal" && @group == "all"
-                  return true
-                end
+                if @group.include?("-")
+                    @group = @group.gsub("clin", "")
+                    @group.squish!
 
-                if campus == "central coast" && @group_prefix == "cc" && @group == "all"
-                  return true
+                    part_one, part_two = @group.split("-")
+
+                    return true if (part_one..part_two).include?(@pbl)
                 end
 
                 return true if @group == @pbl
@@ -57,5 +58,5 @@ module Calendar
             end
         end
     end
+  end
 end
-

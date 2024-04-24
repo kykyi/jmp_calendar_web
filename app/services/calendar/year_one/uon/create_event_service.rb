@@ -1,5 +1,6 @@
 module Calendar
     module YearOne
+        module Uon
         class CreateEventService
             def self.call(pbl:, clin:, row:,  calendar:)
                 new(pbl, clin, row, calendar).call
@@ -25,7 +26,7 @@ module Calendar
                 url = row["url"]
                 name = row["Name of Activity "]
 
-                return unless Calendar::YearOne::CheckValidEventService.is_valid?(group: group, pbl: pbl, clin: clin, group_prefix: group_prefix)
+                return unless Calendar::YearOne::Uon::CheckValidEventService.is_valid?(group: group, pbl: pbl, clin: clin, group_prefix: group_prefix)
                 return if !venue && !date && !time
                 return unless date > TZInfo::Timezone.get('Australia/Sydney').now
 
@@ -55,5 +56,6 @@ module Calendar
 
             attr_reader :pbl, :clin, :row, :calendar
         end
+    end
     end
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Calendar::YearOne::CheckValidEventService do
+RSpec.describe Calendar::YearOne::Uon::CheckValidEventService do
     shared_examples "is_valid? for" do |group, pbl, clin, group_prefix, expected_result|
         it "correctly processes group #{group}, pbl #{pbl}, clin #{clin}, group_prefix #{group_prefix}, to make expected_result #{expected_result}" do
           expect(described_class.is_valid?(group: group, pbl: pbl, clin: clin, group_prefix: group_prefix)).to eq expected_result
