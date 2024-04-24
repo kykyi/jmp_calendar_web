@@ -1,43 +1,43 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.5"
-gem "rails", "~> 7.0.8", ">= 7.0.8.1"
-gem "sprockets-rails"
-gem "sqlite3", "~> 1.4"
-gem "puma", "~> 5.0"
-gem "importmap-rails"
-gem "turbo-rails"
-gem "stimulus-rails"
-gem "jbuilder"
-gem "redis", "~> 4.0"
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-gem "bootsnap", require: false
+ruby '3.0.5'
+gem 'bootsnap', require: false
+gem 'importmap-rails'
+gem 'jbuilder'
+gem 'puma', '~> 5.0'
+gem 'rails', '~> 7.0.8', '>= 7.0.8.1'
+gem 'redis', '~> 4.0'
+gem 'sprockets-rails'
+gem 'sqlite3', '~> 1.4'
+gem 'stimulus-rails'
+gem 'turbo-rails'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'aws-sdk-s3'
-gem "icalendar"
 gem 'aws-sdk-s3'
+gem 'icalendar'
 gem 'pry'
+gem 'roo', '~> 2.10.0'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'spreadsheet'
-gem "roo", "~> 2.10.0"
-gem "tailwindcss-rails", "~> 2.3"
-
+gem 'tailwindcss-rails', '~> 2.3'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
-  gem "web-console"
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'web-console'
 end
 
 group :test do
-  gem "rspec"
+  gem 'rspec'
   gem 'rspec-rails', '~> 6.1.0'
 end
-

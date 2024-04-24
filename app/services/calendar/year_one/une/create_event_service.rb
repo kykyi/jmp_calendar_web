@@ -2,7 +2,7 @@
 
 module Calendar
   module YearOne
-    module Uon
+    module Une
       class CreateEventService
         def self.call(pbl:, clin:, row:, calendar:)
           new(pbl, clin, row, calendar).call

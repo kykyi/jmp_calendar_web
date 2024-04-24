@@ -1,50 +1,52 @@
+# frozen_string_literal: true
+
 class CalendarsController < ApplicationController
-    def new
-        s3 = Aws::S3::Client.new(region: "ap-southeast-2", access_key_id: ENV["AWS_LAMBDA_ACCESS_KEY"],secret_access_key: ENV["AWS_LAMBDA_SECRET_KEY"])
-        items = s3.list_objects(bucket: 'jmp-timetables', max_keys: 50).first.contents
-        items.sort_by!(&:last_modified).reverse!
-        @spreadsheet_options = items.map(&:key)
+  def new
+    s3 = Aws::S3::Client.new(region: 'ap-southeast-2', access_key_id: ENV['AWS_LAMBDA_ACCESS_KEY'],
+                             secret_access_key: ENV['AWS_LAMBDA_SECRET_KEY'])
+    items = s3.list_objects(bucket: 'jmp-timetables', max_keys: 50).first.contents
+    items.sort_by!(&:last_modified).reverse!
+    @spreadsheet_options = items.map(&:key)
+  end
+
+  def create
+    if form_params[:year] == '1' && (form_params[:pbl] == '' || form_params[:clin] == '')
+      flash[:alert] = 'Year 1 students must choose both a pbl and a clin'
+      redirect_to :root and return
     end
 
-    def create
-        if form_params[:year] == "1" && (form_params[:pbl] == "" || form_params[:clin] == "")
-            flash[:alert] = "Year 1 students must choose both a pbl and a clin"
-            redirect_to :root and return
-        end
-
-        if form_params[:year] == "2" && form_params[:pbl] == ""
-            flash[:alert] = "Year 2 students must choose a pbl"
-            redirect_to :root and return
-        end
-
-        response = Aws::S3SpreadsheetClient.call("jmp-timetables", form_params[:spreadsheet])
-
-        calendar = Calendar::CreateCalendarService.call(
-            pbl: form_params[:pbl],
-            clin: form_params[:clin],
-            year: form_params[:year].to_i,
-            spreadsheet: response.xlsx
-        )
-
-        calendar = calendar.to_ical
-
-        if form_params[:year].to_i == 1
-            calendar_name = "pbl_#{form_params[:pbl]}_clin_#{form_params[:clin]}_#{Time.zone.now.strftime("%Y%m%d%H%M%S")}.ics"
-        else
-            calendar_name = "pbl_#{form_params[:pbl]}_#{Time.zone.now.strftime("%Y%m%d%H%M%S")}.ics"
-        end
-
-        send_data calendar, type: 'text/calendar', filename: calendar_name
-
-    rescue StandardError => e
-            Sentry.capture_exception(e)
-            flash[:alert] = "Something went wrong"
-            redirect_to :root and return
+    if form_params[:year] == '2' && form_params[:pbl] == ''
+      flash[:alert] = 'Year 2 students must choose a pbl'
+      redirect_to :root and return
     end
 
-    private
+    response = Aws::S3SpreadsheetClient.call('jmp-timetables', form_params[:spreadsheet])
 
-    def form_params
-        params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year)
-    end
+    calendar = Calendar::CreateCalendarService.call(
+      pbl: form_params[:pbl],
+      clin: form_params[:clin],
+      year: form_params[:year].to_i,
+      spreadsheet: response.xlsx
+    )
+
+    calendar = calendar.to_ical
+
+    calendar_name = if form_params[:year].to_i == 1
+                      "pbl_#{form_params[:pbl]}_clin_#{form_params[:clin]}_#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.ics"
+                    else
+                      "pbl_#{form_params[:pbl]}_#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.ics"
+                    end
+
+    send_data calendar, type: 'text/calendar', filename: calendar_name
+  rescue StandardError => e
+    Sentry.capture_exception(e)
+    flash[:alert] = 'Something went wrong'
+    redirect_to :root and return
+  end
+
+  private
+
+  def form_params
+    params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year)
+  end
 end
