@@ -30,7 +30,6 @@ module Calendar
                 if time.downcase.include?("self") && time.downcase.include?("directed")
                     name = "#{name} (self directed)"
                 elsif !mandatory
-                    raise StandardError
                     name = "#{name} (not mandatory)"
                 end
 
