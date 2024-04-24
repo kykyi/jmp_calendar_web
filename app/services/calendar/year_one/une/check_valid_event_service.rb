@@ -4,15 +4,14 @@ module Calendar
   module YearOne
     module Une
       class CheckValidEventService
-        def self.is_valid?(group:, pbl:, clin:, group_prefix:)
-          new(group, pbl, clin, group_prefix).call
+        def self.is_valid?(group:, pbl:, clin:)
+          new(group, pbl, clin).call
         end
 
-        def initialize(group, pbl, clin, group_prefix)
+        def initialize(group, pbl, clin)
           @group = group
           @pbl = pbl
           @clin = clin
-          @group_prefix = group_prefix
         end
 
         def call
@@ -25,9 +24,6 @@ module Calendar
           @group = @group.downcase if @group
           @pbl = @pbl.downcase if @pbl
           @clin = @clin.downcase if @clin
-          @group_prefix = @group_prefix.downcase if @group_prefix
-
-          return true if @group_prefix == 'all'
 
           return false if ('a'..'h').to_a.include?(@pbl)
 
@@ -37,7 +33,7 @@ module Calendar
 
             part_one, part_two = @group.split('-')
 
-            return true if (part_one..part_two).include?(@pbl)
+            return true if (part_one..part_two).include?(@pbl) or (part_one..part_two).include?(@clin)
           end
 
           return true if @group == @pbl
