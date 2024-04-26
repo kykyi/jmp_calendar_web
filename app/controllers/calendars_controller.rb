@@ -26,6 +26,7 @@ class CalendarsController < ApplicationController
       pbl: form_params[:pbl],
       clin: form_params[:clin],
       year: form_params[:year].to_i,
+      uni: form_params[:uni],
       spreadsheet: response.xlsx
     )
 
@@ -38,15 +39,15 @@ class CalendarsController < ApplicationController
                     end
 
     send_data calendar, type: 'text/calendar', filename: calendar_name
-  rescue StandardError => e
-    Sentry.capture_exception(e)
-    flash[:alert] = 'Something went wrong'
-    redirect_to :root and return
+  # rescue StandardError => e
+  #   Sentry.capture_exception(e)
+  #   flash[:alert] = 'Something went wrong'
+  #   redirect_to :root and return
   end
 
   private
 
   def form_params
-    params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year)
+    params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year, :uni)
   end
 end

@@ -2,15 +2,16 @@
 
 module Calendar
   class CreateCalendarService
-    def self.call(pbl:, spreadsheet:, year:, clin: nil)
-      new(pbl, spreadsheet, year, clin).call
+    def self.call(pbl:, spreadsheet:, year:, clin: nil, uni: "UON")
+      new(pbl, spreadsheet, year, clin, uni).call
     end
 
-    def initialize(pbl, spreadsheet, year, clin)
+    def initialize(pbl, spreadsheet, year, clin, uni)
       @pbl = pbl
       @spreadsheet = spreadsheet
       @year = year
       @clin = clin
+      @uni = uni
     end
 
     def call
@@ -37,8 +38,13 @@ module Calendar
 
         Calendar::YearTwo::CreateEventService.call(pbl: pbl, row: row, calendar: calendar) if year == 2
         if year == 1
-          Calendar::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row,
+          if uni == "UON"
+            Calendar::YearOne::Uon::CreateEventService.call(pbl: pbl, clin: clin, row: row,
                                                      calendar: calendar)
+          elsif uni == "UNE"
+            Calendar::YearOne::Une::CreateEventService.call(pbl: pbl, clin: clin, row: row,
+                                                     calendar: calendar)
+          end
         end
       end
 
@@ -47,6 +53,6 @@ module Calendar
 
     private
 
-    attr_reader :pbl, :spreadsheet, :year, :clin
+    attr_reader :pbl, :spreadsheet, :year, :clin, :uni
   end
 end
