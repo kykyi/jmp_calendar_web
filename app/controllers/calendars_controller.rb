@@ -2,11 +2,9 @@
 
 class CalendarsController < ApplicationController
   def new
-    s3 = Aws::S3::Client.new(region: 'ap-southeast-2', access_key_id: ENV['AWS_LAMBDA_ACCESS_KEY'],
-                             secret_access_key: ENV['AWS_LAMBDA_SECRET_KEY'])
-    items = s3.list_objects(bucket: 'jmp-timetables', max_keys: 50).first.contents
-    items.sort_by!(&:last_modified).reverse!
-    @spreadsheet_options = items.map(&:key)
+    @spreadsheet_options = Dir.glob("lib/assets/spreadsheets/*/*/*").map do |f|
+      f.split("/").last
+    end
   end
 
   def create
@@ -20,14 +18,16 @@ class CalendarsController < ApplicationController
       redirect_to :root and return
     end
 
-    response = Aws::S3SpreadsheetClient.call('jmp-timetables', form_params[:spreadsheet])
+    full_form_file_name = "lib/assets/spreadsheets/#{form_params[:uni].downcase}/#{form_params[:year]}/#{form_params[:spreadsheet]}"
+
+    xlsx =  Roo::Excelx.new(full_form_file_name)
 
     calendar = Calendar::CreateCalendarService.call(
       pbl: form_params[:pbl],
       clin: form_params[:clin],
       year: form_params[:year].to_i,
       uni: form_params[:uni],
-      spreadsheet: response.xlsx
+      spreadsheet: xlsx
     )
 
     calendar = calendar.to_ical

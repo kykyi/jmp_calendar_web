@@ -16,8 +16,6 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'aws-sdk-s3'
-gem 'aws-sdk-s3'
 gem 'icalendar'
 gem 'pry'
 gem 'roo', '~> 2.10.0'
