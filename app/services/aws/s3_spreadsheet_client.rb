@@ -18,8 +18,25 @@ module Aws
         region: config.region
       )
       obj = s3.get_object(bucket: bucket, key: key)
+      content = obj.body.read
 
-      xlsx = Roo::Excelx.new(StringIO.new(obj.body.read))
+
+      xlsx = Roo::Excelx.new(StringIO.new(content))
+
+    rescue NoMethodError => e
+      # Sometimes the file buffer is empty/ incomplete, so
+      # write to a temporary local file!
+      Sentry.capture_exception(e)
+
+      temp_file_name = "#{SecureRandom.uuid}.xlsx"
+      File.open(temp_file_name, 'wb') do |file|
+        file.write(content)
+      end
+
+      xlsx =  Roo::Excelx.new(temp_file_name)
+
+      File.delete(temp_file_name) if File.exists? temp_file_name
+
 
       OpenStruct.new(
         {
