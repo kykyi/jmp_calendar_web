@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class TimeService
   def self.parse_time(date, time_str, is_start)
     date_str = if date.is_a?(Date)
