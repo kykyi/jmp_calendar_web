@@ -24,10 +24,12 @@ module Calendar
           venue = row['VENUE']
           name = row['SESSION']
 
+          return unless date > TZInfo::Timezone.get('Australia/Sydney').now
+          binding.pry
+
           return unless Calendar::YearOne::Une::CheckValidEventService.is_valid?(group: group, pbl: pbl,
                                                                                  clin: clin)
           return if !venue && !date && !time
-          return unless date > TZInfo::Timezone.get('Australia/Sydney').now
 
           if time.downcase.include?('self') && time.downcase.include?('directed')
             name = "#{name} (self directed)"
