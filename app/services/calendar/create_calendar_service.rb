@@ -2,7 +2,7 @@
 
 module Calendar
   class CreateCalendarService
-    def self.call(pbl:, spreadsheet:, year:, clin: nil, uni: "UON")
+    def self.call(pbl:, spreadsheet:, year:, clin: nil, uni: "uon")
       new(pbl, spreadsheet, year, clin, uni).call
     end
 
@@ -38,10 +38,10 @@ module Calendar
 
         Calendar::YearTwo::CreateEventService.call(pbl: pbl, row: row, calendar: calendar) if year == 2
         if year == 1
-          if uni == "UON"
+          if uni == "uon"
             Calendar::YearOne::Uon::CreateEventService.call(pbl: pbl, clin: clin, row: row,
                                                      calendar: calendar)
-          elsif uni == "UNE"
+          elsif uni == "une"
             Calendar::YearOne::Une::CreateEventService.call(pbl: pbl, clin: clin, row: row,
                                                      calendar: calendar)
           end

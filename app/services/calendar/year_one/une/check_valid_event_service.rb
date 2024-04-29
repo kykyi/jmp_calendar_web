@@ -25,6 +25,8 @@ module Calendar
           @pbl = @pbl.downcase if @pbl
           @clin = @clin.downcase if @clin
 
+          return unless @group && @pbl && @clin
+
           return false if ('a'..'h').to_a.include?(@pbl)
 
           if @group.include?('-')

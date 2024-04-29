@@ -24,12 +24,20 @@ module Calendar
           venue = row['VENUE']
           name = row['SESSION']
 
-          return unless date > TZInfo::Timezone.get('Australia/Sydney').now
-          binding.pry
+          return if !date
+
+          # Sometimes dates are invalid, like Feb 29 on a leap year, just ignore these
+          begin
+            unless date.is_a? Date
+              date = Date.parse(date)
+            end
+            return unless date > TZInfo::Timezone.get('Australia/Sydney').now
+          rescue Date::Error
+            return
+          end
 
           return unless Calendar::YearOne::Une::CheckValidEventService.is_valid?(group: group, pbl: pbl,
                                                                                  clin: clin)
-          return if !venue && !date && !time
 
           if time.downcase.include?('self') && time.downcase.include?('directed')
             name = "#{name} (self directed)"
@@ -50,7 +58,7 @@ module Calendar
             event.summary = name.strip.squish
             event.location = venue
             # TODO: Add zoom links
-            event.url = url if url
+            # event.url = url if url
           end
         end
 

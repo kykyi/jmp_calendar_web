@@ -26,7 +26,7 @@ class CalendarsController < ApplicationController
       pbl: form_params[:pbl],
       clin: form_params[:clin],
       year: form_params[:year].to_i,
-      uni: form_params[:uni],
+      uni: form_params[:uni].downcase,
       spreadsheet: xlsx
     )
 

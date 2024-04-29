@@ -20,14 +20,14 @@ RSpec.describe Calendar::CreateCalendarService do
             expected_result = Icalendar::Calendar.parse(cal_file)
             expected_result = expected_result.first.to_ical
 
-            calendar = described_class.call(pbl: pbl, spreadsheet: spreadsheet, year: year, clin: clin)
+            calendar = described_class.call(pbl: pbl, spreadsheet: spreadsheet, year: year, clin: clin, uni: "une")
             calendar.events.each { |event| event.uid = '00000000-0000-0000-0000-000000000000' }
 
             expect(expected_result).to eq(calendar.to_ical)
           end
         end
 
-        include_examples 'create calendar for', 'K', '20', 1, 'test/fixtures/files/example_one_year_one_une.ics'
+        include_examples 'create calendar for', 'K', '16', 1, 'test/fixtures/files/example_one_year_one_une.ics'
         include_examples 'create calendar for', 'E', '5', 1, 'test/fixtures/files/example_two_year_one_une.ics'
         include_examples 'create calendar for', 'A', '2', 1, 'test/fixtures/files/example_three_year_one_une.ics'
       end
