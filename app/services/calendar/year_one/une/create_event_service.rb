@@ -24,6 +24,7 @@ module Calendar
           venue = row['VENUE']
           name = row['SESSION']
 
+
           return if !date
 
           # Sometimes dates are invalid, like Feb 29 on a leap year, just ignore these

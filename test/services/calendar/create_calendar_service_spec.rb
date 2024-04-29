@@ -27,7 +27,7 @@ RSpec.describe Calendar::CreateCalendarService do
           end
         end
 
-        include_examples 'create calendar for', 'K', '16', 1, 'test/fixtures/files/example_one_year_one_une.ics'
+        include_examples 'create calendar for', 'B', '16', 1, 'test/fixtures/files/example_one_year_one_une.ics'
         include_examples 'create calendar for', 'E', '5', 1, 'test/fixtures/files/example_two_year_one_une.ics'
         include_examples 'create calendar for', 'A', '2', 1, 'test/fixtures/files/example_three_year_one_une.ics'
       end

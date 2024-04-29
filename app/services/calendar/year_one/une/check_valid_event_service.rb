@@ -27,8 +27,6 @@ module Calendar
 
           return unless @group && @pbl && @clin
 
-          return false if ('a'..'h').to_a.include?(@pbl)
-
           if @group.include?('-')
             @group = @group.gsub('clin', '')
             @group.squish!
