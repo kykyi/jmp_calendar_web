@@ -1,34 +1,36 @@
-<div class="w-2/3 h-min mx-4 mt-28 bg-gray-50 shadow-lg rounded-lg p-6 md:p-8">
-  <h2 class="text-center text-3xl md:text-4xl font-bold text-gray-800 mb-6 md:mb-8">Get Your Timetable</h2>
-  <p class="text-gray-600">Generate an <strong>ics</strong> file which can be imported into any calendar app (<a href="https://support.google.com/calendar/answer/37118?hl=en&co=GENIE.Platform%3DDesktop" class="ml-auto text-blue-500 hover:text-blue-600 underline">Gmail</a>, <a href="https://support.microsoft.com/en-au/office/import-or-subscribe-to-a-calendar-in-outlook-com-or-outlook-on-the-web-cff1429c-5af6-41ec-a5b4-74f2c278e98c#:~:text=Select%20Upload%20from%20file.,to%2C%20and%20then%20select%20Import." class="ml-auto text-blue-500 hover:text-blue-600 underline">Outlook</a>, <a href="https://support.apple.com/en-vn/guide/iphone/iph3d1110d4/ios#:~:text=Create%20an%20iCloud%20calendar%3A%20Tap,information)%2C%20then%20click%20Subscribe." class="ml-auto text-blue-500 hover:text-blue-600 underline">Apple</a> etc).
-  <br/>
-  <p class="text-gray-600">This will be updated as future timetable versions are released.</p>
-  <% if flash[:alert] %>
-    <div class="text-red-600">
+<div class="flex justify-center w-screen pt-12 m-auto">
+  <div class="mx-4 m-auto bg-gray-50 shadow-lg rounded-lg p-6 md:p-8">
+    <h2 class="text-center text-3xl md:text-4xl font-bold text-gray-800 mb-6 md:mb-8">Get Your JMP Timetable</h2>
+    <p class="text-gray-600">Generate an <strong>ics</strong> file which can be imported into any calendar app (<a href="https://support.google.com/calendar/answer/37118?hl=en&co=GENIE.Platform%3DDesktop" class="ml-auto text-blue-500 hover:text-blue-600 underline">Gmail</a>, <a href="https://support.microsoft.com/en-au/office/import-or-subscribe-to-a-calendar-in-outlook-com-or-outlook-on-the-web-cff1429c-5af6-41ec-a5b4-74f2c278e98c#:~:text=Select%20Upload%20from%20file.,to%2C%20and%20then%20select%20Import." class="ml-auto text-blue-500 hover:text-blue-600 underline">Outlook</a>, <a href="https://support.apple.com/en-vn/guide/iphone/iph3d1110d4/ios#:~:text=Create%20an%20iCloud%20calendar%3A%20Tap,information)%2C%20then%20click%20Subscribe." class="ml-auto text-blue-500 hover:text-blue-600 underline">Apple</a> etc).
     <br/>
-    <p class="text-red-600"><%= flash[:alert] %></p>
+    <p class="text-gray-600">This will be updated as future timetable versions are released.</p>
+    <% if flash[:alert] %>
+      <div class="text-red-600">
+      <br/>
+      <p class="text-red-600"><%= flash[:alert] %></p>
+      </div>
+    <% end %>
+    <div class="flex items-center mt-4x">
+      <%= link_to "clear choices", root_path, class: "ml-auto text-red-600 hover:text-red-600 right" %>
     </div>
-  <% end %>
-  <div class="flex items-center mt-4x">
-    <%= link_to "clear choices", root_path, class: "ml-auto text-blue-500 hover:text-blue-600 right" %>
-  </div>
-  <%= render partial: 'form', locals: { uni: @uni,
-              year: @year,
-              spreadsheet: @spreadsheet,
-              pbl: @pbl,
-              clin: @clin,
-              year_options: @year_options,
-              uni_options: @uni_options,
-              spreadsheet_options: @spreadsheet_options,
-              pbl_options: @pbl_options,
-              clin_options: @clin_options,
-              submit_disabled: @submit_disabled
-            } %>
+    <%= render partial: 'form', locals: { uni: @uni,
+                year: @year,
+                spreadsheet: @spreadsheet,
+                pbl: @pbl,
+                clin: @clin,
+                year_options: @year_options,
+                uni_options: @uni_options,
+                spreadsheet_options: @spreadsheet_options,
+                pbl_options: @pbl_options,
+                clin_options: @clin_options,
+                submit_disabled: @submit_disabled
+              } %>
 
-  <div class="flex items-center">
-    <a href="mailto:c3438165@uon.edu.au?subject=I need help with my timetable" class="ml-auto text-blue-500 hover:text-blue-600">
-      Need help?
-    </a>
+    <div class="flex items-center">
+      <a href="mailto:c3438165@uon.edu.au?subject=I need help with my timetable" class="ml-auto text-blue-500 hover:text-blue-600">
+        Need help?
+      </a>
+    </div>
   </div>
 </div>
 

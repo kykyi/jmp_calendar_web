@@ -1,5 +1,6 @@
 <%= form_with scope: :user_input, url: calendars_path, method: :post, local: true, data: { turbo: false }, class: "space-y-4 md:space-y-6" do |form| %>
 <%= turbo_frame_tag 'form_frame' do %>
+    <div class="w-2/3 m-auto">
         <%= render partial: "select_option", locals: { name: 'uni', label: 'University', value: uni, default: 'Select a Uni', options: uni_options, form: form } %>
         <% if year_options&.any? %>
             <%= render partial: "select_option", locals: { name: 'year', label: 'JMP Year', value: year, default: 'Select JMP Year', options: year_options, form: form } %>
@@ -17,19 +18,20 @@
             <% end  %>
         <% end %>
 
-    <%= form.hidden_field :complete, value: submit_disabled %>
-    <%= form.hidden_field :uni, value: uni %>
-    <%= form.hidden_field :year, value: year %>
-    <%= form.hidden_field :spreadsheet, value: spreadsheet %>
-    <%= form.hidden_field :pbl, value: pbl %>
-    <%= form.hidden_field :clin, value: clin %>
+        <%= form.hidden_field :complete, value: submit_disabled %>
+        <%= form.hidden_field :uni, value: uni %>
+        <%= form.hidden_field :year, value: year %>
+        <%= form.hidden_field :spreadsheet, value: spreadsheet %>
+        <%= form.hidden_field :pbl, value: pbl %>
+        <%= form.hidden_field :clin, value: clin %>
 
-    <div class="flex justify-center">
-        <%= form.submit "Submit",
-            disabled: submit_disabled,
-            class: "mt-3 w-full md:w-auto px-6 py-2 border border-transparent shadow-sm text-base md:text-md font-medium rounded-md text-white " +
-                    "#{submit_disabled ? 'bg-gray-500 hover:bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+        <div class="flex justify-center">
+            <%= form.submit "Submit",
+                disabled: submit_disabled,
+                class: "mt-3 w-full md:w-auto px-6 py-2 border border-transparent shadow-sm text-base md:text-md font-medium rounded-md text-white " +
+                        "#{submit_disabled ? 'bg-gray-500 hover:bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
 
+        </div>
     </div>
     <% end %>
 <% end %>
