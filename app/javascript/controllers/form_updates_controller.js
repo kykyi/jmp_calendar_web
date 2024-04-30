@@ -13,8 +13,7 @@ export default class extends Controller {
     const frameId = event.target.dataset.frameId;
     let url = `/calendars/update_form?frame_id=${frameId}&`;
 
-    console.log(uni)
-
+    // handle different post if the form is complete
 
     // Build up the query params
     if (uni) {

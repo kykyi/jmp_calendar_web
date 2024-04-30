@@ -33,7 +33,6 @@ class CalendarsController < ApplicationController
 
 
   def create
-    binding.pry
     if form_params[:year] == '1' && (form_params[:pbl] == '' || form_params[:clin] == '')
       flash[:alert] = 'Year 1 students must choose both a pbl and a clin'
       redirect_to :root and return

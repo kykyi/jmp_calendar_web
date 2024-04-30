@@ -1,8 +1,8 @@
 <div class="flex-1">
     <%= form.label name, label, class: "block text-md md:text-lg font-medium text-gray-800" %>
     <%= form.select name,
-        options,
-        { include_blank: value.present? ? value : default },
+        options_for_select(options, selected: value.present? ? value : nil),
+        { include_blank: value.present? ? false : default },
         data: {
             controller: "form-updates",
             action: "change->form-updates#updateForm",
@@ -11,8 +11,5 @@
         id: "#{name}_select",
         class: "mt-1 block w-full py-2 px-3 border border-gray-200 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-base md:text-md",
         disabled: value.present?
-
     %>
 </div>
-
-
