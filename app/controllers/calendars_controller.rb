@@ -68,6 +68,8 @@ class CalendarsController < ApplicationController
     Sentry.capture_exception(e)
     flash[:alert] = 'Something went wrong'
     redirect_to :root and return
+
+    Sentry.capture_message("Calendar created for #{form_params[:uni]} #{form_params[:year]} #{form_params[:spreadsheet]} #{form_params[:pbl]} #{form_params[:clin]}", level: :info)
   end
 
   private
