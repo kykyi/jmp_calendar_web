@@ -90,7 +90,7 @@ class CalendarsController < ApplicationController
     if spreadsheet
       if uni == "UNE"
         @pbl_options =  ("A".."H").to_a
-        @clin_options =  ("1".."10").to_a
+        @clin_options =  ("1".."16").to_a
       elsif uni == "UON"
         @pbl_options =  ("A".."Q").to_a
         if year == "1"
