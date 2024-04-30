@@ -64,10 +64,10 @@ class CalendarsController < ApplicationController
                     end
 
     send_data calendar, type: 'text/calendar', filename: calendar_name
-  # rescue StandardError => e
-  #   Sentry.capture_exception(e)
-  #   flash[:alert] = 'Something went wrong'
-  #   redirect_to :root and return
+  rescue StandardError => e
+    Sentry.capture_exception(e)
+    flash[:alert] = 'Something went wrong'
+    redirect_to :root and return
   end
 
   private
