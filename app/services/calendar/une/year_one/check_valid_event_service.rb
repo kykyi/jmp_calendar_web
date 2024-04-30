@@ -1,8 +1,8 @@
-# frozen_string_literal: true
+
 
 module Calendar
-  module YearOne
-    module Une
+  module Une
+    module YearOne
       class CheckValidEventService
         def self.is_valid?(group:, pbl:, clin:)
           new(group, pbl, clin).call

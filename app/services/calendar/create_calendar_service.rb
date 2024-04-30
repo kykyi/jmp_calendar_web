@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 module Calendar
   class CreateCalendarService
@@ -36,13 +36,13 @@ module Calendar
 
         row = column_headers.zip(row).to_h
 
-        Calendar::YearTwo::CreateEventService.call(pbl: pbl, row: row, calendar: calendar) if year == 2
+        Calendar::Uon::YearTwo::CreateEventService.call(pbl: pbl, row: row, calendar: calendar) if year == 2
         if year == 1
           if uni == "uon"
-            Calendar::YearOne::Uon::CreateEventService.call(pbl: pbl, clin: clin, row: row,
+            Calendar::Uon::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row,
                                                      calendar: calendar)
           elsif uni == "une"
-            Calendar::YearOne::Une::CreateEventService.call(pbl: pbl, clin: clin, row: row,
+            Calendar::Uon::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row,
                                                      calendar: calendar)
           end
         end

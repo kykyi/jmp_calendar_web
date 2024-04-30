@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 Sentry.init do |config|
   config.dsn = 'https://85bfa2d8f5e821b2dc9667d407fcee3d@o4506799250407424.ingest.sentry.io/4506806914449408'

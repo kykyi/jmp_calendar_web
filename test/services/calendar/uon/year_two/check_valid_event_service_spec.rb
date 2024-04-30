@@ -1,8 +1,8 @@
-# frozen_string_literal: true
+
 
 require 'rails_helper'
 
-RSpec.describe Calendar::YearTwo::CheckValidEventService do
+RSpec.describe Calendar::Uon::YearTwo::CheckValidEventService do
   shared_examples 'is_valid? for' do |group, pbl, campus, expected_result|
     it "correctly processes group #{group}, pbl #{pbl}, campus #{campus}, to make expected_result #{expected_result}" do
       expect(described_class.is_valid?(group: group, pbl: pbl, campus: campus)).to eq expected_result
