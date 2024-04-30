@@ -9,11 +9,15 @@ export default class extends Controller {
     let spreadsheet = document.querySelector('#spreadsheet_select')?.value;
     let pbl = document.querySelector('#pbl_select')?.value;
     let clin = document.querySelector('#clin_select')?.value;
+    let complete = document.querySelector('#complete')?.value;
 
     const frameId = event.target.dataset.frameId;
+
     let url = `/calendars/update_form?frame_id=${frameId}&`;
 
-    // handle different post if the form is complete
+    if (!!complete) {
+      url = `/calendars?`;
+    }
 
     // Build up the query params
     if (uni) {
@@ -30,7 +34,44 @@ export default class extends Controller {
           }
         }
       }
-      Turbo.visit(url, { frame: frameId });
+
+      if (!!complete) {
+        debugger
+          // CSRF Token
+        const csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+
+        // Fetch request
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'X-CSRF-Token': csrfToken, // Include CSRF token in the request header
+            'Accept': 'text/html' // Expect HTML response (adjust if your server responds with JSON)
+          },
+          body: {
+            uni: uni,
+            year: year,
+            spreadsheet: spreadsheet,
+            pbl: pbl,
+            clin: clin
+          }
+        }).then(response => {
+          if (response.ok) {
+            return response.text(); // or response.json() if your server responds with JSON
+          } else {
+            throw new Error('Network response was not ok.');
+          }
+        }).then(html => {
+          // Handle the HTML or JSON response here
+          // For example, you might want to replace part of the page with new HTML
+          // Or redirect the user
+          console.log("Form submitted successfully!");
+        }).catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
+        });
+      } else {
+        Turbo.visit(url, { frame: frameId });
+      }
+
     }
   }
 }

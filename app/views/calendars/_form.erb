@@ -17,6 +17,12 @@
             <% end  %>
         <% end %>
 
+    <%= form.hidden_field :complete, value: submit_disabled %>
+    <%= form.hidden_field :uni, value: uni %>
+    <%= form.hidden_field :year, value: year %>
+    <%= form.hidden_field :spreadsheet, value: spreadsheet %>
+    <%= form.hidden_field :pbl, value: pbl %>
+    <%= form.hidden_field :clin, value: clin %>
 
     <div class="flex justify-center">
         <%= form.submit "Submit",
