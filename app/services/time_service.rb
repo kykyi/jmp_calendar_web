@@ -29,7 +29,13 @@ class TimeService
     chosen_time.tr!(':', '.')
     chosen_time.delete!(' ')
 
-    time_format = chosen_time.include?('.') ? '%Y-%m-%d %I.%M%p' : '%Y-%m-%d %I%p'
+    # Allow for times like 11-12pm
+    if chosen_time.include?('am') || chosen_time.include?('pm')
+      time_format = chosen_time.include?('.') ? '%Y-%m-%d %I.%M%p' : '%Y-%m-%d %I%p'
+    else
+      time_format = chosen_time.include?('.') ? '%Y-%m-%d %H.%M' : '%Y-%m-%d %H'
+    end
+
     time_obj = Time.strptime("#{date_str} #{chosen_time}", time_format)
 
     time_obj.to_datetime

@@ -73,7 +73,7 @@ class CalendarsController < ApplicationController
   private
 
   def form_params
-    params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year, :uni)
+    params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year, :uni, :complete)
   end
 
   def set_instance_vars(uni, year, spreadsheet, pbl, clin)
