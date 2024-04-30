@@ -1,11 +1,32 @@
 # frozen_string_literal: true
 
 class CalendarsController < ApplicationController
+  before_action :set_uni_options, only: %i[new update_form]
+  before_action :set_defaults, only: %i[new update_form]
+
   def new
-    @spreadsheet_options = Dir.glob("lib/assets/spreadsheets/*/*/*").map do |f|
-      f.split("/").last
-    end
   end
+
+  def update_form
+    @uni = params[:uni]
+    @year = params[:year]
+    @spreadsheet = params[:spreadsheet]
+
+
+    set_instance_vars(@uni, @year, @spreadsheet)
+
+    render turbo_stream: turbo_stream.replace(params[:frame_id], partial: "calendars/form",
+    locals: { uni: @uni,
+              year: @year,
+              spreadsheet: @spreadsheet,
+              year_options: @year_options,
+              uni_options: @uni_options,
+              spreadsheet_options: @spreadsheet_options,
+              pbl_options: @pbl_options,
+              clin_options: @clin_options
+            })
+  end
+
 
   def create
     if form_params[:year] == '1' && (form_params[:pbl] == '' || form_params[:clin] == '')
@@ -49,5 +70,50 @@ class CalendarsController < ApplicationController
 
   def form_params
     params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year, :uni)
+  end
+
+  def set_instance_vars(uni, year, spreadsheet)
+    if uni == 'UON'
+      @year_options = [1,2]
+    elsif uni == 'UNE'
+      @year_options = [1]
+    end
+
+    if uni && year
+      @spreadsheet_options = get_spreadsheet_options_for(uni, year)
+    end
+
+    if spreadsheet
+      if uni == "UNE"
+        @pbl_options =  ("A".."H").to_a
+        @clin_options =  ("1".."10").to_a
+      elsif uni == "UON"
+        @pbl_options =  ("A".."Q").to_a
+        if year == "1"
+          @clin_options =  ("1".."20").to_a
+        end
+      end
+    end
+  end
+
+  def get_spreadsheet_options_for(uni="*", year="*")
+    Dir.glob("lib/assets/spreadsheets/#{uni.downcase}/#{year}/*").map do |f|
+      f.split("/").last
+    end
+  end
+
+  def set_uni_options
+    @uni_options = ["UNE", "UON"]
+  end
+
+  def set_defaults
+    @uni ||= nil
+    @year ||= nil
+    @spreadsheet ||= nil
+    @year_options ||= []
+    @uni_options ||= []
+    @spreadsheet_options ||= []
+    @pbl_options ||= []
+    @clin_options ||= []
   end
 end
