@@ -5,4 +5,924 @@ CALSCALE:GREGORIAN
 BEGIN:VTIMEZONE
 TZID:Australia/Sydney
 END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240226T103000
+DTEND;TZID=Australia/Sydney:20240226T120000
+LOCATION:Anatomy Lab
+SUMMARY:Anatomy - Lab Introduction to Anatomy Terminology and Orientation t
+ o the lab (not mandatory) - Anatomy Lab (Clin 9-16)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240226T130000
+DTEND;TZID=Australia/Sydney:20240226T150000
+LOCATION:PBL B
+SUMMARY:Open Working Problem 02 Wk 2 Formation & Cells (not mandatory) - PB
+ L Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240226T150000
+DTEND;TZID=Australia/Sydney:20240226T160000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Year 1 Cohort Pictures (not mandatory) - (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240227T090000
+DTEND;TZID=Australia/Sydney:20240227T100000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Function of cell membranes\, organelles\, various 
+ cell types (not mandatory) - Biochemistry Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240227T100000
+DTEND;TZID=Australia/Sydney:20240227T110000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Mitosis and cell differentiation (not mandatory) -
+  Biochemistry Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240227T153000
+DTEND;TZID=Australia/Sydney:20240227T170000
+LOCATION:McClymont Lab 1
+SUMMARY:Histology - Lab Introduction to Histology-Cellular Structure (not m
+ andatory) - Histology Lab (Clin 12-16)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240227T120000
+DTEND;TZID=Australia/Sydney:20240227T130000
+LOCATION:Refer to CANVAS
+SUMMARY:Medical Sciences Stages of foetal development (self directed) - Onl
+ ine Module (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240228T120000
+DTEND;TZID=Australia/Sydney:20240228T130000
+LOCATION:Refer to CANVAS
+SUMMARY:Health Societies and Environment VIDEO: Equity and Social Determina
+ nts of Health (self directed) - HSE Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240228T090000
+DTEND;TZID=Australia/Sydney:20240228T100000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences From Gene to Protein (not mandatory) - Genetics Le
+ cture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240228T110000
+DTEND;TZID=Australia/Sydney:20240228T120000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Professional Development - Ethics The Role of the Doctor (not manda
+ tory) - Prof Prac Seminar (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240228T130000
+DTEND;TZID=Australia/Sydney:20240228T150000
+LOCATION:PBL B
+SUMMARY:Middle Working Problem 02 Wk 2 Formation & Cells (not mandatory) - 
+ PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240229T143000
+DTEND;TZID=Australia/Sydney:20240229T150000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Letter Writing Task (not mandatory) - (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240403T130000
+DTEND;TZID=Australia/Sydney:20240403T150000
+LOCATION:PBL B
+SUMMARY:Open Working Problem 03 Wk 3 Growth (not mandatory) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240503T100000
+DTEND;TZID=Australia/Sydney:20240503T113000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Basics of Communication and Control: Signal Transd
+ uction (not mandatory) - Biochemistry Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240503T140000
+DTEND;TZID=Australia/Sydney:20240503T150000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Student Support Framework Presentation (not mandatory) - Seminar (A
+ -H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240603T090000
+DTEND;TZID=Australia/Sydney:20240603T100000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Basics of communication and control: Endocrine Sys
+ tem (not mandatory) - Physiology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240603T103000
+DTEND;TZID=Australia/Sydney:20240603T113000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:What is the Problem? How big is the Problem? Measuring the Health o
+ f populations (not mandatory) - HSE Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240603T130000
+DTEND;TZID=Australia/Sydney:20240603T150000
+LOCATION:PBL B
+SUMMARY:Middle Working Problem 03 Wk 3 Growth (not mandatory) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240603T150000
+DTEND;TZID=Australia/Sydney:20240603T160000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Basics of Heredity and Variability (not mandatory)
+  - Genetics Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240703T090000
+DTEND;TZID=Australia/Sydney:20240703T103000
+LOCATION:Tablelands Clinical School
+SUMMARY:Introduction to Communication Skills Introduction to communication 
+ skills (not mandatory) - ClinSkills (CLIN 14 & 16)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240703T103000
+DTEND;TZID=Australia/Sydney:20240703T120000
+LOCATION:Tablelands Clinical School
+SUMMARY:Structured Clinical Skills Vital signs and basic observation #1 & P
+ PE (not mandatory) - ClinSkills (CLIN 16)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240703T133000
+DTEND;TZID=Australia/Sydney:20240703T143000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Professional Development - Ethics Epistemology\, truth\, and eviden
+ ce in learning - What is true? Evolutionary biology and moral behaviour (n
+ ot mandatory) - Prof Prac Seminar (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240803T100000
+DTEND;TZID=Australia/Sydney:20240803T120000
+LOCATION:PBL C
+SUMMARY:Close Working Problem 03 Wk 3 Growth (not mandatory) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20241103T130000
+DTEND;TZID=Australia/Sydney:20241103T150000
+LOCATION:PBL B
+SUMMARY:Open Working Problem 04 Wk 4 Ageing & Control (not mandatory) - PBL
+  Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20241103T150000
+DTEND;TZID=Australia/Sydney:20241103T160000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Clinical Practice Introduction to Medical History Taking (not manda
+ tory) - Clinical Practice Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20241103T173000
+DTEND;TZID=Australia/Sydney:20241103T190000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Clinical Review & Patient Centred Forum Puberty & Growth (not manda
+ tory) - Clinical Patient Forum (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20241203T090000
+DTEND;TZID=Australia/Sydney:20241203T100000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Basics of communication and control 2: Nervous sys
+ tem (not mandatory) - Physiology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20241203T100000
+DTEND;TZID=Australia/Sydney:20241203T110000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Neurons and how they communicate (not mandatory) -
+  Physiology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20241203T113000
+DTEND;TZID=Australia/Sydney:20241203T123000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Social Anxiety and Social Confidence (not mandatory) - Seminar (A-H
+ )
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240313T090000
+DTEND;TZID=Australia/Sydney:20240313T100000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Intro to pharmacodynamics (not mandatory) - Pharma
+ cology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240313T100000
+DTEND;TZID=Australia/Sydney:20240313T110000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Intro to pharmacology / Pharmacokinetics (not mand
+ atory) - Pharmacology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240313T113000
+DTEND;TZID=Australia/Sydney:20240313T123000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:ClinConnect Compliance Information Session (not mandatory) - Inform
+ ation Session (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240313T130000
+DTEND;TZID=Australia/Sydney:20240313T150000
+LOCATION:PBL C
+SUMMARY:Middle Working Problem 04 Wk 4 Ageing & Control (not mandatory) - P
+ BL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240313T150000
+DTEND;TZID=Australia/Sydney:20240313T160000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Health Societies and Environment Demography: From birth to old age 
+ (not mandatory) - HSE Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240314T173000
+DTEND;TZID=Australia/Sydney:20240314T190000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Clinical Review Forum Experiences of Ageing/ palliative care (not m
+ andatory) - Clinical Forum (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240315T090000
+DTEND;TZID=Australia/Sydney:20240315T110000
+LOCATION:PBL B
+SUMMARY:Close Working Problem 04 Wk 4 Ageing & Control (not mandatory) - PB
+ L Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240315T113000
+DTEND;TZID=Australia/Sydney:20240315T123000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Introduction to Study Design (not mandatory) - Research Lecture (A-
+ H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240318T110000
+DTEND;TZID=Australia/Sydney:20240318T113000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Welcome from JMP Dean - Question & Answer Session (not mandatory) -
+  (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240318T130000
+DTEND;TZID=Australia/Sydney:20240318T150000
+LOCATION:PBL B
+SUMMARY:Open Working Problem 05 Wk 5 Maintenance & Defence (not mandatory) 
+ - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240319T090000
+DTEND;TZID=Australia/Sydney:20240319T100000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Inflammation and the cellular response to stress (
+ not mandatory) - Pathology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240319T110000
+DTEND;TZID=Australia/Sydney:20240319T123000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Overview of immune system function (1.5 hr) (not m
+ andatory) - Immunology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240319T153000
+DTEND;TZID=Australia/Sydney:20240319T170000
+LOCATION:McClymont Lab 1
+SUMMARY:Histology - Lab Four basic tissues - focus on skin (not mandatory) 
+ - Histology Lab (Clin 12-16)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240320T100000
+DTEND;TZID=Australia/Sydney:20240320T110000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Intro to microbes\, skin flora\, infection (not ma
+ ndatory) - Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240320T130000
+DTEND;TZID=Australia/Sydney:20240320T150000
+LOCATION:PBL C
+SUMMARY:Middle Working Problem 05 Wk 5 Maintenance & Defence (not mandatory
+ ) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240321T103000
+DTEND;TZID=Australia/Sydney:20240321T120000
+LOCATION:Tablelands Clinical School
+SUMMARY:Structured Clinical Skills Vital signs and basic observation #2 (no
+ t mandatory) - ClinSkills (CLIN 16)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240322T090000
+DTEND;TZID=Australia/Sydney:20240322T110000
+LOCATION:PBL B
+SUMMARY:Close Working Problem 05 Wk 5 Maintenance & Defence (not mandatory)
+  - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240322T120000
+DTEND;TZID=Australia/Sydney:20240322T130000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Anatomy - Lecture Overview of the thorax & structures of the cardio
+ vascular system (not mandatory) - Anatomy Lab Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240325T130000
+DTEND;TZID=Australia/Sydney:20240325T150000
+LOCATION:PBL B
+SUMMARY:Open Working Problem 06 Wk 6 Overview of The Cardiovascular System\
+ , Blood\, & Blood pressure (not mandatory) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240325T153000
+DTEND;TZID=Australia/Sydney:20240325T173000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Optional Tutorial - Medi Sciences - Immunology (not mandatory) - Pl
+ ease email JMP-Year1@une.edu.au if you would like to attend (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240326T090000
+DTEND;TZID=Australia/Sydney:20240326T100000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Overview of blood and the circulatory system (not 
+ mandatory) - Physiology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240326T100000
+DTEND;TZID=Australia/Sydney:20240326T110000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Mechanics of the heart as a pump (not mandatory) -
+  Physiology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240326T110000
+DTEND;TZID=Australia/Sydney:20240326T120000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Volume loss and overview of blood pressure mainten
+ ance (not mandatory) - Physiology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240326T153000
+DTEND;TZID=Australia/Sydney:20240326T170000
+LOCATION:McClymont Lab 1
+SUMMARY:Histology - Lab Four basic tissues - focus on skin (not mandatory) 
+ - Histology Lab (Clin 12-16)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240327T090000
+DTEND;TZID=Australia/Sydney:20240327T103000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Pharmacology of the Autonomic Nervous System (not 
+ mandatory) - Pharmacology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240327T103000
+DTEND;TZID=Australia/Sydney:20240327T113000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Intro to anatomy of a Paper (not mandatory) - Research Lecture (A-H
+ )
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240327T113000
+DTEND;TZID=Australia/Sydney:20240327T123000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Week 4: Impact of history on health in Aboriginal and Torres Strait
+  Islander Populations (not mandatory) - HSE Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240327T130000
+DTEND;TZID=Australia/Sydney:20240327T150000
+LOCATION:PBL B
+SUMMARY:Middle Working Problem 06 Wk 6 Overview of The Cardiovascular Syste
+ m\, Blood\, & Blood pressure (not mandatory) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240327T150000
+DTEND;TZID=Australia/Sydney:20240327T160000
+LOCATION:Lewis Lecture Theatre (Room LT101) C028
+SUMMARY:Introduction to Lifestyle and Risk Factors (not mandatory) - Clinsk
+ ills (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240327T173000
+DTEND;TZID=Australia/Sydney:20240327T183000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Imaging: Interpreting Chest X-rays (not mandatory) - Lectur
+ e (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240328T134500
+DTEND;TZID=Australia/Sydney:20240328T143000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Professionalism / Question & Answer Session (not mandatory) - (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240328T143000
+DTEND;TZID=Australia/Sydney:20240328T153000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Anatomy - Lecture Wk 7 Overview of the Respiratory System (not mand
+ atory) - Anatomy Lab Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240804T130000
+DTEND;TZID=Australia/Sydney:20240804T150000
+LOCATION:PBL B
+SUMMARY:Close Working Problem 06 Wk 6 Overview of The Cardiovascular System
+ \, Blood\, & Blood pressure (not mandatory) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240804T150000
+DTEND;TZID=Australia/Sydney:20240804T170000
+LOCATION:PBL B
+SUMMARY:Open Working Problem 07 Wk 7 Overview of The Respiratory System\, B
+ reathing\, Haemoglobin\, & Gas Exchange (not mandatory) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240904T090000
+DTEND;TZID=Australia/Sydney:20240904T100000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Overview of Respiration / The mechanics of breathi
+ ng (not mandatory) - Physiology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240904T100000
+DTEND;TZID=Australia/Sydney:20240904T110000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Nervous system control of breathing (not mandatory
+ ) - Physiology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240904T140000
+DTEND;TZID=Australia/Sydney:20240904T150000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Haemoglobin and protein structure (not mandatory) 
+ - Biochemistry Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240904T150000
+DTEND;TZID=Australia/Sydney:20240904T160000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Whats the Course of the Problem: Determining risk factors (not mand
+ atory) - Research Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20241004T130000
+DTEND;TZID=Australia/Sydney:20241004T150000
+LOCATION:PBL B
+SUMMARY:Middle Working Problem 07 Wk 7 Overview of The Respiratory System\,
+  Breathing\, Haemoglobin\, & Gas Exchange (not mandatory) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20241104T090000
+DTEND;TZID=Australia/Sydney:20241104T103000
+LOCATION:Tablelands Clinical School
+SUMMARY:Communication Skills Communication around Lifestyle and Risk Factor
+ s (not mandatory) - ClinSkills (CLIN 15 & 16)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20241104T103000
+DTEND;TZID=Australia/Sydney:20241104T120000
+LOCATION:Tablelands Clinical School
+SUMMARY:Structured Clinical Skills Cardiology Exam Session #1 (not mandator
+ y) - ClinSkills (CLIN 16)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20241204T090000
+DTEND;TZID=Australia/Sydney:20241204T110000
+LOCATION:PBL B
+SUMMARY:Close Working Problem 07 Wk 7 Overview of The Respiratory System\, 
+ Breathing\, Haemoglobin\, & Gas Exchange (not mandatory) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20241204T120000
+DTEND;TZID=Australia/Sydney:20241204T130000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Professional Practice Clinical decision making 1 - What should we d
+ o? (not mandatory) - Prof Prac Seminar (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240415T090000
+DTEND;TZID=Australia/Sydney:20240415T100000
+LOCATION:Resources Management Building (Room 274)
+SUMMARY:Intro to ECG (not mandatory) - Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240415T130000
+DTEND;TZID=Australia/Sydney:20240415T150000
+LOCATION:PBL B
+SUMMARY:Open Working Problem 08 Wk 8 The Heart – Control\, Conduction\, C
+ ontraction (not mandatory) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240415T150000
+DTEND;TZID=Australia/Sydney:20240415T160000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Pharmacology of heart rate/rhythm (not mandatory) 
+ - Pharmacology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240416T090000
+DTEND;TZID=Australia/Sydney:20240416T100000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Cardiac electrophysiology (not mandatory) - Physio
+ logy Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240416T100000
+DTEND;TZID=Australia/Sydney:20240416T110000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Excitation contraction coupling (not mandatory) - 
+ Physiology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240416T110000
+DTEND;TZID=Australia/Sydney:20240416T120000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Cardiac rhythm and output (not mandatory) - Physio
+ logy Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240416T153000
+DTEND;TZID=Australia/Sydney:20240416T170000
+LOCATION:McClymont Lab 4
+SUMMARY:Histology Three Muscle Types (not mandatory) - Histology Lab (Clin 
+ 12-16)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240417T090000
+DTEND;TZID=Australia/Sydney:20240417T100000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Pharmacology of heart rate/rhythm (not mandatory) 
+ - Pharmacology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240417T130000
+DTEND;TZID=Australia/Sydney:20240417T150000
+LOCATION:PBL B
+SUMMARY:Middle Working Problem 08 Wk 8 The Heart – Control\, Conduction\,
+  Contraction (not mandatory) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240417T120000
+DTEND;TZID=Australia/Sydney:20240417T130000
+LOCATION:Canvas
+SUMMARY:Principles of Health Promotion Pre-Recorded lecture - Canvas (self 
+ directed) - HSE Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240418T103000
+DTEND;TZID=Australia/Sydney:20240418T120000
+LOCATION:Tablelands Clinical School
+SUMMARY:Structured Clinical Skills Cardiology Exam Session #2 + ECG (not ma
+ ndatory) - ClinSkills (CLIN 12 & 16)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240418T140000
+DTEND;TZID=Australia/Sydney:20240418T150000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Professional Practice Clinical decision making 2 - What Should we d
+ o-part 2 (not mandatory) - Prof Prac Seminar (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240418T150000
+DTEND;TZID=Australia/Sydney:20240418T160000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Q&A Session for OSCE Exams (not mandatory) - Information Session (A
+ -H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240419T090000
+DTEND;TZID=Australia/Sydney:20240419T110000
+LOCATION:PBL B
+SUMMARY:Close Working Problem 08 Wk 8 The Heart – Control\, Conduction\, 
+ Contraction (not mandatory) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240419T120000
+DTEND;TZID=Australia/Sydney:20240419T130000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Anatomy - Lecture Wk 9 The Heart (not mandatory) - Anatomy Lab Lect
+ ure (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240422T130000
+DTEND;TZID=Australia/Sydney:20240422T150000
+LOCATION:PBL B
+SUMMARY:Open Working Problem 09 Wk 9 The Heart – Perfusion (not mandatory
+ ) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240422T150000
+DTEND;TZID=Australia/Sydney:20240422T160000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Clinical Pharmacology - Introduction to Formulary (not mandatory) -
+  Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240423T090000
+DTEND;TZID=Australia/Sydney:20240423T100000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Control of perfusion in myocardium (not mandatory)
+  - Physiology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240423T100000
+DTEND;TZID=Australia/Sydney:20240423T110000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Energy metabolism in myocardium (not mandatory) - 
+ Biochemistry Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240423T113000
+DTEND;TZID=Australia/Sydney:20240423T123000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Pharmacology of cardiac ischemia (not mandatory) -
+  Pharmacology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240423T143000
+DTEND;TZID=Australia/Sydney:20240423T153000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Professional Practice Clinical decision making 3 What Should we do 
+ part 3 & What is true part 3 (not mandatory) - Prof Prac Seminar (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240424T100000
+DTEND;TZID=Australia/Sydney:20240424T110000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Myocardial ischemia causes and results (overview) 
+ (not mandatory) - Pathology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240424T130000
+DTEND;TZID=Australia/Sydney:20240424T150000
+LOCATION:PBL B
+SUMMARY:Middle Working Problem 09 Wk 9 The Heart – Perfusion (not mandato
+ ry) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240426T150000
+DTEND;TZID=Australia/Sydney:20240426T160000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Anatomy - Lecture Wk 10 Lower Airway Detail (not mandatory) - Anato
+ my Lab Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240426T090000
+DTEND;TZID=Australia/Sydney:20240426T110000
+LOCATION:PBL B
+SUMMARY:Close Working Problem 09 Wk 9 The Heart – Perfusion (not mandator
+ y) - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240429T130000
+DTEND;TZID=Australia/Sydney:20240429T150000
+LOCATION:PBL B
+SUMMARY:Open Working Problem 10 Wk 10 The Lungs – Airways (not mandatory)
+  - PBL Tut (B)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240430T090000
+DTEND;TZID=Australia/Sydney:20240430T100000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Intro to allergy (not mandatory) - Immunology Lect
+ ure (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240430T100000
+DTEND;TZID=Australia/Sydney:20240430T110000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Medical Sciences Overview of toxins in lung and Pathology of asthma
+  (not mandatory) - Pathology Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240430T113000
+DTEND;TZID=Australia/Sydney:20240430T123000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:Anatomy - Lecture Wk 11 Upper Respiratory Tract (not mandatory) - A
+ natomy Lab Lecture (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240430T123000
+DTEND;TZID=Australia/Sydney:20240430T130000
+LOCATION:Somerville Lecture Theatre (P1)
+SUMMARY:John Nevin Scholarship Presentation (not mandatory) - (A-H)
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T130000Z
+UID:00000000-0000-0000-0000-000000000000
+DTSTART;TZID=Australia/Sydney:20240305T090000
+DTEND;TZID=Australia/Sydney:20240305T110000
+LOCATION:PBL B
+SUMMARY:Close Working Problem 10 Wk 10 The Lungs – Airways (not mandatory
+ ) - PBL Tut (B)
+END:VEVENT
 END:VCALENDAR

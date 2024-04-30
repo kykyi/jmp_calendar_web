@@ -42,7 +42,7 @@ module Calendar
             Calendar::Uon::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row,
                                                      calendar: calendar)
           elsif uni == "une"
-            Calendar::Uon::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row,
+            Calendar::Une::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row,
                                                      calendar: calendar)
           end
         end
