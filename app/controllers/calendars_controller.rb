@@ -11,24 +11,29 @@ class CalendarsController < ApplicationController
     @uni = params[:uni]
     @year = params[:year]
     @spreadsheet = params[:spreadsheet]
+    @pbl = params[:pbl]
+    @clin = params[:clin]
 
-
-    set_instance_vars(@uni, @year, @spreadsheet)
+    set_instance_vars(@uni, @year, @spreadsheet, @pbl, @clin)
 
     render turbo_stream: turbo_stream.replace(params[:frame_id], partial: "calendars/form",
     locals: { uni: @uni,
               year: @year,
               spreadsheet: @spreadsheet,
+              pbl: @pbl,
+              clin: @clin,
               year_options: @year_options,
               uni_options: @uni_options,
               spreadsheet_options: @spreadsheet_options,
               pbl_options: @pbl_options,
-              clin_options: @clin_options
+              clin_options: @clin_options,
+              submit_disabled: @submit_disabled
             })
   end
 
 
   def create
+    binding.pry
     if form_params[:year] == '1' && (form_params[:pbl] == '' || form_params[:clin] == '')
       flash[:alert] = 'Year 1 students must choose both a pbl and a clin'
       redirect_to :root and return
@@ -72,7 +77,7 @@ class CalendarsController < ApplicationController
     params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year, :uni)
   end
 
-  def set_instance_vars(uni, year, spreadsheet)
+  def set_instance_vars(uni, year, spreadsheet, pbl, clin)
     if uni == 'UON'
       @year_options = [1,2]
     elsif uni == 'UNE'
@@ -94,6 +99,13 @@ class CalendarsController < ApplicationController
         end
       end
     end
+
+    if year == "1"
+      @submit_disabled = !uni || !year || !spreadsheet || !pbl || !clin
+    else
+      @submit_disabled = !uni || !year || !spreadsheet || !pbl
+    end
+
   end
 
   def get_spreadsheet_options_for(uni="*", year="*")
@@ -115,5 +127,6 @@ class CalendarsController < ApplicationController
     @spreadsheet_options ||= []
     @pbl_options ||= []
     @clin_options ||= []
+    @submit_disabled ||= true
   end
 end

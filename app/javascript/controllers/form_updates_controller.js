@@ -4,28 +4,29 @@ import { Turbo } from "@hotwired/turbo-rails"
 
 export default class extends Controller {
   updateForm(event) {
-    const uni = document.querySelector('#uni_select').value;
-    const year = document.querySelector('#year_select')?.value;
-    const spreadsheet = document.querySelector('#spreadsheet_select')?.value;
-    const pbl = document.querySelector('#pbl_select')?.value;
-    const clin = document.querySelector('#clin_select')?.value;
+    let uni = document.querySelector('#uni_select').value;
+    let year = document.querySelector('#year_select')?.value;
+    let spreadsheet = document.querySelector('#spreadsheet_select')?.value;
+    let pbl = document.querySelector('#pbl_select')?.value;
+    let clin = document.querySelector('#clin_select')?.value;
 
     const frameId = event.target.dataset.frameId;
     let url = `/calendars/update_form?frame_id=${frameId}&`;
 
-    console.log(uni, year)
+    console.log(uni)
+
 
     // Build up the query params
     if (uni) {
-      url += `uni=${uni}&`;
+      url += `uni=${encodeURIComponent(uni)}&`;
       if (year) {
-        url += `year=${year}&`;
+        url += `year=${encodeURIComponent(year)}&`;
         if (spreadsheet) {
-          url += `spreadsheet=${spreadsheet}&`;
+          url += `spreadsheet=${encodeURIComponent(spreadsheet)}&`;
           if (pbl) {
-            url += `pbl=${pbl}&`;
+            url += `pbl=${encodeURIComponent(pbl)}&`;
             if (clin) {
-              url += `clin=${clin}`;
+              url += `clin=${encodeURIComponent(clin)}`;
             }
           }
         }

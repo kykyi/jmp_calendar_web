@@ -9,15 +9,20 @@
     <p class="text-red-600"><%= flash[:alert] %></p>
     </div>
   <% end %>
-
+  <div class="flex items-center mt-4x">
+    <%= link_to "clear choices", root_path, class: "ml-auto text-blue-500 hover:text-blue-600 right" %>
+  </div>
   <%= render partial: 'form', locals: { uni: @uni,
               year: @year,
               spreadsheet: @spreadsheet,
+              pbl: @pbl,
+              clin: @clin,
               year_options: @year_options,
               uni_options: @uni_options,
               spreadsheet_options: @spreadsheet_options,
               pbl_options: @pbl_options,
-              clin_options: @clin_options
+              clin_options: @clin_options,
+              submit_disabled: @submit_disabled
             } %>
 
   <div class="flex items-center">
@@ -26,3 +31,4 @@
     </a>
   </div>
 </div>
+
