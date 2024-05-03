@@ -19,5 +19,5 @@ services:
         value: 2 # sensible default
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: jmp-timetable-generator
           property: connectionString
