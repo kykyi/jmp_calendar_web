@@ -1,7 +1,7 @@
 databases:
   - name: jmp-timetable-generator
-    databaseName: jmp-timetable-generator
-    user: jmp-timetable-generator
+    databaseName: jmp_calendar_web_production
+    user: jmp_calendar_web
     plan: free
 
 services:
