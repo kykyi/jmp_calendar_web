@@ -63,7 +63,7 @@ class CalendarsController < ApplicationController
                       "pbl_#{form_params[:pbl]}_#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.ics"
                     end
 
-    Calendar.create(raw: calendar)
+    Calendar.create(raw: calendar, pbl: form_params[:pbl].downcase, clin: form_params[:clin], year: form_params[:year], uni: form_params[:uni].downcase, spreadsheet: form_params[:spreadsheet])
 
     send_data calendar, type: 'text/calendar', filename: calendar_name
   rescue StandardError => e
@@ -118,7 +118,7 @@ class CalendarsController < ApplicationController
   end
 
   def set_uni_options
-    @uni_options = ["UNE", "UON"]
+    @uni_options = ["UON", "UNE"]
   end
 
   def set_defaults
