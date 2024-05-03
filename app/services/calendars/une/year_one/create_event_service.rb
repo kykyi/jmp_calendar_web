@@ -1,7 +1,7 @@
 
 
-module Calendar
-  module Uon
+module Calendars
+  module Une
     module YearOne
       class CreateEventService
         def self.call(pbl:, clin:, row:, calendar:)
@@ -16,22 +16,29 @@ module Calendar
         end
 
         def call
-          group = row['Group Letter / Number']
-          group_prefix = row[
-              "Group Prefix\nCAL=\nCallaghan\nCC=\nCentral Coast\nALL=\nall campuses"
-          ]
-          mandatory = row["Attendance\n(M =\nmandatory)"]
-          time = row['Time']
-          domain = row['Domain']
-          date = row['Date']
-          venue = row['Venue']
-          url = row['url']
-          name = row['Name of Activity ']
+          group = row['GROUPS']
+          mandatory = row["Attendance\n(M - Mandatory)"]
+          time = row['TIME']
+          domain = row['TYPE']
+          date = row['DATE']
+          venue = row['VENUE']
+          name = row['SESSION']
 
-          return unless Calendar::Uon::YearOne::CheckValidEventService.is_valid?(group: group, pbl: pbl,
-                                                                                 clin: clin, group_prefix: group_prefix)
-          return if !venue && !date && !time
-          return unless date > TZInfo::Timezone.get('Australia/Sydney').now
+
+          return if !date
+
+          # Sometimes dates are invalid, like Feb 29 on a leap year, just ignore these
+          begin
+            unless date.is_a? Date
+              date = Date.parse(date)
+            end
+            return unless date > TZInfo::Timezone.get('Australia/Sydney').now
+          rescue Date::Error
+            return
+          end
+
+          return unless Calendars::Une::YearOne::CheckValidEventService.is_valid?(group: group, pbl: pbl,
+                                                                                 clin: clin)
 
           if time.downcase.include?('self') && time.downcase.include?('directed')
             name = "#{name} (self directed)"
@@ -52,7 +59,7 @@ module Calendar
             event.summary = name.strip.squish
             event.location = venue
             # TODO: Add zoom links
-            event.url = url if url
+            # event.url = url if url
           end
         end
 

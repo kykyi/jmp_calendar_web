@@ -1,6 +1,6 @@
 
 
-module Calendar
+module Calendars
   module Uon
     module YearTwo
       class CheckValidEventService

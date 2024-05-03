@@ -1,32 +1,35 @@
 
 
-module Calendar
+module Calendars
   module Uon
-    module YearTwo
+    module YearOne
       class CreateEventService
-        def self.call(pbl:, row:, calendar:)
-          new(pbl, row, calendar).call
+        def self.call(pbl:, clin:, row:, calendar:)
+          new(pbl, clin, row, calendar).call
         end
 
-        def initialize(pbl, row, calendar)
+        def initialize(pbl, clin, row, calendar)
           @pbl = pbl
+          @clin = clin
           @row = row
           @calendar = calendar
         end
 
         def call
-          campus = row['Campus']
-          group = row['Group']
-          venue = row["Venue/\nZoom Link"]
-          mandatory = row['Attendance '] == 'MAND' # the space
+          group = row['Group Letter / Number']
+          group_prefix = row[
+              "Group Prefix\nCAL=\nCallaghan\nCC=\nCentral Coast\nALL=\nall campuses"
+          ]
+          mandatory = row["Attendance\n(M =\nmandatory)"]
           time = row['Time']
-          date = row['Date']
           domain = row['Domain']
-          typex = row['Type']
-          name = row['Session']
+          date = row['Date']
+          venue = row['Venue']
+          url = row['url']
+          name = row['Name of Activity ']
 
-          return unless Calendar::Uon::YearTwo::CheckValidEventService.is_valid?(campus: campus, pbl: pbl,
-                                                                            group: group)
+          return unless Calendars::Uon::YearOne::CheckValidEventService.is_valid?(group: group, pbl: pbl,
+                                                                                 clin: clin, group_prefix: group_prefix)
           return if !venue && !date && !time
           return unless date > TZInfo::Timezone.get('Australia/Sydney').now
 
@@ -36,7 +39,7 @@ module Calendar
             name = "#{name} (not mandatory)"
           end
 
-          name = "#{name} #{typex} - #{domain} (#{campus})"
+          name = "#{name} - #{domain} (#{group})"
 
           calendar.event do |event|
             tzid = 'Australia/Sydney'
@@ -49,13 +52,13 @@ module Calendar
             event.summary = name.strip.squish
             event.location = venue
             # TODO: Add zoom links
-            # event.url = url if url
+            event.url = url if url
           end
         end
 
         private
 
-        attr_reader :pbl, :row, :calendar
+        attr_reader :pbl, :clin, :row, :calendar
       end
     end
   end

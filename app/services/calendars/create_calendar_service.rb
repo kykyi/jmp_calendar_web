@@ -1,6 +1,6 @@
 
 
-module Calendar
+module Calendars
   class CreateCalendarService
     def self.call(pbl:, spreadsheet:, year:, clin: nil, uni: "uon")
       new(pbl, spreadsheet, year, clin, uni).call
@@ -36,13 +36,13 @@ module Calendar
 
         row = column_headers.zip(row).to_h
 
-        Calendar::Uon::YearTwo::CreateEventService.call(pbl: pbl, row: row, calendar: calendar) if year == 2
+        Calendars::Uon::YearTwo::CreateEventService.call(pbl: pbl, row: row, calendar: calendar) if year == 2
         if year == 1
           if uni == "uon"
-            Calendar::Uon::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row,
+            Calendars::Uon::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row,
                                                      calendar: calendar)
           elsif uni == "une"
-            Calendar::Une::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row,
+            Calendars::Une::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row,
                                                      calendar: calendar)
           end
         end

@@ -47,7 +47,7 @@ class CalendarsController < ApplicationController
 
     xlsx =  Roo::Excelx.new(full_form_file_name)
 
-    calendar = Calendar::CreateCalendarService.call(
+    calendar = Calendars::CreateCalendarService.call(
       pbl: form_params[:pbl],
       clin: form_params[:clin],
       year: form_params[:year].to_i,
@@ -62,6 +62,8 @@ class CalendarsController < ApplicationController
                     else
                       "pbl_#{form_params[:pbl]}_#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.ics"
                     end
+
+    Calendar.create(raw: calendar)
 
     send_data calendar, type: 'text/calendar', filename: calendar_name
   rescue StandardError => e

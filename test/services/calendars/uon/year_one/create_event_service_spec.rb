@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Calendar::Uon::YearOne::CreateEventService do
+RSpec.describe Calendars::Uon::YearOne::CreateEventService do
   describe '.call' do
     subject(:create_event) { described_class.call(pbl: pbl, clin: pbl, row: row, calendar: calendar) }
     let(:calendar) { Icalendar::Calendar.new }

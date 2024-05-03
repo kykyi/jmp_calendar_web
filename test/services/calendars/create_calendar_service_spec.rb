@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Calendar::CreateCalendarService do
+RSpec.describe Calendars::CreateCalendarService do
   describe '.call' do
 
     context "une" do
