@@ -33,16 +33,6 @@ class CalendarsController < ApplicationController
 
 
   def create
-    if form_params[:year] == '1' && (form_params[:pbl] == '' || form_params[:clin] == '')
-      flash[:alert] = 'Year 1 students must choose both a pbl and a clin'
-      redirect_to :root and return
-    end
-
-    if form_params[:year] == '2' && form_params[:pbl] == ''
-      flash[:alert] = 'Year 2 students must choose a pbl'
-      redirect_to :root and return
-    end
-
     full_form_file_name = "lib/assets/spreadsheets/#{form_params[:uni].downcase}/#{form_params[:year]}/#{form_params[:spreadsheet]}"
 
     xlsx =  Roo::Excelx.new(full_form_file_name)
@@ -70,14 +60,12 @@ class CalendarsController < ApplicationController
     Sentry.capture_exception(e)
     flash[:alert] = 'Something went wrong'
     redirect_to :root and return
-
-    Sentry.capture_message("Calendar created for #{form_params[:uni]} #{form_params[:year]} #{form_params[:spreadsheet]} #{form_params[:pbl]} #{form_params[:clin]}", level: :info)
   end
 
   private
 
   def form_params
-    params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year, :uni, :complete)
+    params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year, :uni, :complete, exclude_pbl_and_clin)
   end
 
   def set_instance_vars(uni, year, spreadsheet, pbl, clin)
@@ -103,12 +91,13 @@ class CalendarsController < ApplicationController
       end
     end
 
-    if year == "1"
+    if exclude_pbl_and_clin[:exclude_pbl_and_clin]
+      @submit_disabled = !uni || !year || !spreadsheet
+    elsif year == "1"
       @submit_disabled = !uni || !year || !spreadsheet || !pbl || !clin
     else
       @submit_disabled = !uni || !year || !spreadsheet || !pbl
     end
-
   end
 
   def get_spreadsheet_options_for(uni="*", year="*")

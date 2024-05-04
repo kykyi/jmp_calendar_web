@@ -2,7 +2,7 @@
 
 module Calendars
   class CreateCalendarService
-    def self.call(pbl:, spreadsheet:, year:, clin: nil, uni: "uon")
+    def self.call(pbl: nil, spreadsheet:, year:, clin: nil, uni: "uon")
       new(pbl, spreadsheet, year, clin, uni).call
     end
 

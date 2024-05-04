@@ -8,6 +8,8 @@
             <% if spreadsheet_options&.any? %>
                 <%= render partial: "select_option", locals: { name: 'spreadsheet', label: 'Timetable spreadsheet', value: spreadsheet, default: 'Select a timetable', options: spreadsheet_options, form: form } %>
 
+                <%= radio_button :exclude_pbl_and_clin, "Exclude PBL and CLIN classes (for Staff)" %>
+
                 <% if pbl_options&.any? %>
                     <%= render partial: "select_option", locals: { name: 'pbl', label: 'PBL Group', value: pbl, default: 'Select a PBL', options: pbl_options, form: form } %>
                 <% end  %>
@@ -24,6 +26,7 @@
         <%= form.hidden_field :spreadsheet, value: spreadsheet %>
         <%= form.hidden_field :pbl, value: pbl %>
         <%= form.hidden_field :clin, value: clin %>
+        <%= form.hidden_field :exclude_pbl_and_clin, value: staff %>
 
         <div class="flex justify-center">
             <%= form.submit "Submit",
