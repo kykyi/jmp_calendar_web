@@ -17,7 +17,6 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'icalendar'
-gem 'pry'
 gem 'roo', '~> 2.10.0'
 gem 'sentry-rails'
 gem 'sentry-ruby'
@@ -27,6 +26,8 @@ gem 'tailwindcss-rails', '~> 2.3'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem "capybara", "~> 3.29"
+  gem 'pry'
 end
 
 group :development do
