@@ -1,5 +1,8 @@
 require 'rails_helper'
 
+# NOTE
+# These tests are time dependent, as only events with dates greater than Time.zone.today
+# are assessed. Keep this in mind if debugging!
 RSpec.describe "Spreadsheets contain no errors" do
     shared_examples "a valid combination" do
         it "does not raise an error" do
