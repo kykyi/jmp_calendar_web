@@ -12,15 +12,12 @@ RSpec.describe "Spreadsheets contain no errors" do
         end
     end
     describe "UON Year 1" do
-        CLIN_OPTS = ("1".."20").to_a
-        PBL_OPTS = ("A".."Q").to_a
-
         let(:uni) { "UON" }
         let(:year) { 1 }
-        let(:spreadsheet) { load_spreadsheet(uni, year, "UON MEDI1101A Student Timetable Wk 2 - 14.xlsx") }
+        let(:spreadsheet) { load_spreadsheet(uni, year, "MEDI1101A Timetable Weeks 1 to 11 2024 - Callaghan & Central Coast - Published.xlsx") }
 
-        CLIN_OPTS.each do |clin|
-            PBL_OPTS.each do |pbl|
+        ("1".."20").to_a.each do |clin|
+            ("A".."Q").to_a.each do |pbl|
                 it_behaves_like "a valid combination" do
                     let(:pbl) { pbl }
                     let(:clin) { clin }
@@ -30,30 +27,25 @@ RSpec.describe "Spreadsheets contain no errors" do
     end
 
     describe "UON Year 2" do
-        PBL_OPTS = ("A".."Q").to_a
-
         let(:uni) { "UON" }
         let(:year) { 2 }
         let(:spreadsheet) { load_spreadsheet(uni, year, "2024MEDI2101ATimetable-CANVAS.xlsx") }
 
-        PBL_OPTS.each do |pbl|
+        ("A".."Q").to_a.each do |pbl|
             it_behaves_like "a valid combination" do
                 let(:pbl) { pbl }
-                let(:clin) { clin }
+                let(:clin) { nil }
             end
         end
     end
 
     describe "UNE Year 1" do
-        CLIN_OPTS = ("1".."16").to_a
-        PBL_OPTS = ("A".."H").to_a
-
         let(:uni) { "UNE" }
         let(:year) { 1 }
         let(:spreadsheet) { load_spreadsheet(uni, year, "UNE MEDI1101A Student Timetable Wk 2 - 14.xlsx") }
 
-        CLIN_OPTS.each do |clin|
-            PBL_OPTS.each do |pbl|
+        ("1".."16").to_a.each do |clin|
+            ("A".."H").to_a.each do |pbl|
                 it_behaves_like "a valid combination" do
                     let(:pbl) { pbl }
                     let(:clin) { clin }
