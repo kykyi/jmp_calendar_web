@@ -7,7 +7,7 @@ RSpec.describe Calendars::CreateCalendarService do
 
     context "une" do
       context 'year one' do
-        let(:spreadsheet) { Roo::Excelx.new('spec/fixtures/files/spec_timetable_year_one_une.xlsx') }
+        let(:spreadsheet) { Roo::Excelx.new('spec/fixtures/files/test_timetable_year_one_une.xlsx') }
 
         before do
           Time.zone = 'Australia/Sydney'
@@ -35,7 +35,7 @@ RSpec.describe Calendars::CreateCalendarService do
 
     context "uon" do
       context 'year one' do
-        let(:spreadsheet) { Roo::Excelx.new('spec/fixtures/files/spec_timetable_year_one.xlsx') }
+        let(:spreadsheet) { Roo::Excelx.new('spec/fixtures/files/test_timetable_year_one.xlsx') }
 
         before do
           Time.zone = 'Australia/Sydney'
@@ -61,7 +61,7 @@ RSpec.describe Calendars::CreateCalendarService do
       end
 
       context 'year two' do
-        let(:spreadsheet) { Roo::Excelx.new('spec/fixtures/files/spec_timetable_year_two.xlsx') }
+        let(:spreadsheet) { Roo::Excelx.new('spec/fixtures/files/test_timetable_year_two.xlsx') }
 
         before do
           Time.zone = 'Australia/Sydney'

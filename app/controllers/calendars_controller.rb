@@ -48,11 +48,7 @@ class CalendarsController < ApplicationController
 
     calendar = calendar.to_ical
 
-    calendar_name = if form_params[:year].to_i == 1
-                      "pbl_#{form_params[:pbl]}_clin_#{form_params[:clin]}_#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.ics"
-                    else
-                      "pbl_#{form_params[:pbl]}_#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.ics"
-                    end
+    calendar_name =  "timetable_#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.ics"
 
     Calendar.create(raw: calendar, pbl: form_params[:pbl].downcase, clin: form_params[:clin], year: form_params[:year], uni: form_params[:uni].downcase, spreadsheet: form_params[:spreadsheet])
 
