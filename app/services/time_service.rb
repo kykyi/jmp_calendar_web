@@ -7,6 +7,7 @@ class TimeService
                end
 
     time_str.downcase!
+    time_str.strip!
 
     # Allow for silly times given in the time column
     time_str = '12pm - 1pm' if ["tba", "self directed learning", 'self-directed', 'self directed', 'as timetabled on canvas'].include?(time_str)
