@@ -27,7 +27,8 @@ class CalendarsController < ApplicationController
               spreadsheet_options: @spreadsheet_options,
               pbl_options: @pbl_options,
               clin_options: @clin_options,
-              submit_disabled: @submit_disabled
+              submit_disabled: @submit_disabled,
+              exclude_pbl_and_clin: @exclude_pbl_and_clin
             })
   end
 
@@ -65,7 +66,7 @@ class CalendarsController < ApplicationController
   private
 
   def form_params
-    params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year, :uni, :complete, exclude_pbl_and_clin)
+    params.require(:user_input).permit(:clin, :pbl, :spreadsheet, :year, :uni, :complete, :exclude_pbl_and_clin)
   end
 
   def set_instance_vars(uni, year, spreadsheet, pbl, clin)
@@ -91,13 +92,7 @@ class CalendarsController < ApplicationController
       end
     end
 
-    if exclude_pbl_and_clin[:exclude_pbl_and_clin]
-      @submit_disabled = !uni || !year || !spreadsheet
-    elsif year == "1"
-      @submit_disabled = !uni || !year || !spreadsheet || !pbl || !clin
-    else
-      @submit_disabled = !uni || !year || !spreadsheet || !pbl
-    end
+    @submit_disabled = !uni || !year || !spreadsheet
   end
 
   def get_spreadsheet_options_for(uni="*", year="*")
@@ -120,5 +115,6 @@ class CalendarsController < ApplicationController
     @pbl_options ||= []
     @clin_options ||= []
     @submit_disabled ||= true
+    @exclude_pbl_and_clin ||= nil
   end
 end
