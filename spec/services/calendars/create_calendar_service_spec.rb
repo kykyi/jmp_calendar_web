@@ -7,7 +7,7 @@ RSpec.describe Calendars::CreateCalendarService do
 
     context "une" do
       context 'year one' do
-        let(:spreadsheet) { Roo::Excelx.new('test/fixtures/files/test_timetable_year_one_une.xlsx') }
+        let(:spreadsheet) { Roo::Excelx.new('spec/fixtures/files/spec_timetable_year_one_une.xlsx') }
 
         before do
           Time.zone = 'Australia/Sydney'
@@ -27,15 +27,15 @@ RSpec.describe Calendars::CreateCalendarService do
           end
         end
 
-        include_examples 'create calendar for', 'B', '16', 1, 'test/fixtures/files/example_one_year_one_une.ics'
-        include_examples 'create calendar for', 'E', '5', 1, 'test/fixtures/files/example_two_year_one_une.ics'
-        include_examples 'create calendar for', 'A', '2', 1, 'test/fixtures/files/example_three_year_one_une.ics'
+        include_examples 'create calendar for', 'B', '16', 1, 'spec/fixtures/files/example_one_year_one_une.ics'
+        include_examples 'create calendar for', 'E', '5', 1, 'spec/fixtures/files/example_two_year_one_une.ics'
+        include_examples 'create calendar for', 'A', '2', 1, 'spec/fixtures/files/example_three_year_one_une.ics'
       end
     end
 
     context "uon" do
       context 'year one' do
-        let(:spreadsheet) { Roo::Excelx.new('test/fixtures/files/test_timetable_year_one.xlsx') }
+        let(:spreadsheet) { Roo::Excelx.new('spec/fixtures/files/spec_timetable_year_one.xlsx') }
 
         before do
           Time.zone = 'Australia/Sydney'
@@ -55,13 +55,13 @@ RSpec.describe Calendars::CreateCalendarService do
           end
         end
 
-        include_examples 'create calendar for', 'K', '20', 1, 'test/fixtures/files/example_one_year_one.ics'
-        include_examples 'create calendar for', 'E', '5', 1, 'test/fixtures/files/example_two_year_one.ics'
-        include_examples 'create calendar for', 'A', '2', 1, 'test/fixtures/files/example_three_year_one.ics'
+        include_examples 'create calendar for', 'K', '20', 1, 'spec/fixtures/files/example_one_year_one.ics'
+        include_examples 'create calendar for', 'E', '5', 1, 'spec/fixtures/files/example_two_year_one.ics'
+        include_examples 'create calendar for', 'A', '2', 1, 'spec/fixtures/files/example_three_year_one.ics'
       end
 
       context 'year two' do
-        let(:spreadsheet) { Roo::Excelx.new('test/fixtures/files/test_timetable_year_two.xlsx') }
+        let(:spreadsheet) { Roo::Excelx.new('spec/fixtures/files/spec_timetable_year_two.xlsx') }
 
         before do
           Time.zone = 'Australia/Sydney'
@@ -81,9 +81,9 @@ RSpec.describe Calendars::CreateCalendarService do
           end
         end
 
-        include_examples 'create calendar for', 'K', 2, 'test/fixtures/files/example_one_year_two.ics'
-        include_examples 'create calendar for', 'E', 2, 'test/fixtures/files/example_two_year_two.ics'
-        include_examples 'create calendar for', 'A', 2, 'test/fixtures/files/example_three_year_two.ics'
+        include_examples 'create calendar for', 'K', 2, 'spec/fixtures/files/example_one_year_two.ics'
+        include_examples 'create calendar for', 'E', 2, 'spec/fixtures/files/example_two_year_two.ics'
+        include_examples 'create calendar for', 'A', 2, 'spec/fixtures/files/example_three_year_two.ics'
       end
     end
   end
