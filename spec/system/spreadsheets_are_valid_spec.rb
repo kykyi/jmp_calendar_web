@@ -29,7 +29,7 @@ RSpec.describe "Spreadsheets contain no errors" do
     describe "UON Year 2" do
         let(:uni) { "UON" }
         let(:year) { 2 }
-        let(:spreadsheet) { load_spreadsheet(uni, year, "2024MEDI2101ATimetable-CANVAS.xlsx") }
+        let(:spreadsheet) { load_spreadsheet(uni, year, "2024+MEDI2101A+Timetable+-+CANVAS.xlsx") }
 
         ("A".."Q").to_a.each do |pbl|
             it_behaves_like "a valid combination" do
