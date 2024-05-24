@@ -14,7 +14,7 @@ RSpec.describe "Spreadsheets contain no errors" do
     describe "UON Year 1" do
         let(:uni) { "UON" }
         let(:year) { 1 }
-        let(:spreadsheet) { load_spreadsheet(uni, year, "MEDI1101A Timetable Weeks 1 to 15 2024 - Callaghan & Central Coast - Published.xlsx") }
+        let(:spreadsheet) { load_spreadsheet(uni, year, "MEDI1101A Timetable Weeks 1 to 15 2024 - Callaghan & Central Coast - Published v3.xlsx") }
 
         ("1".."20").to_a.each do |clin|
             ("A".."Q").to_a.each do |pbl|
