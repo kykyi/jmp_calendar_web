@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 require 'rails_helper'
 
@@ -20,7 +20,7 @@ RSpec.describe 'Spreadsheets contain no errors' do
     let(:year) { 1 }
     let(:spreadsheet) do
       load_spreadsheet(uni, year,
-                       'MEDI1101A Timetable Weeks 1 to 15 2024 - Callaghan & Central Coast - Published v3.xlsx')
+                       'MEDI1101B Timetable Week Pre-16 to 17 2024 - Callaghan & Central Coast.xlsx')
     end
 
     ('1'..'20').to_a.each do |clin|

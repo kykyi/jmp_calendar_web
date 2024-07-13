@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 require 'rails_helper'
 
@@ -38,7 +38,7 @@ RSpec.describe Calendars::CreateCalendarService do
 
         before do
           Time.zone = 'Australia/Sydney'
-          travel_to Time.zone.local(2024, 0o2, 24, 0, 0, 0)
+          travel_to Time.zone.local(2024, 0o7, 14, 0, 0, 0)
         end
 
         shared_examples 'create calendar for' do |pbl, clin, year, expected_result_file|

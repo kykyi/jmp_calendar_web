@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 class CalendarsController < ApplicationController
   before_action :set_uni_options, only: %i[new update_form]

@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 require 'rails_helper'
 
@@ -9,11 +9,10 @@ RSpec.describe Calendars::Uon::YearOne::CreateEventService do
     let(:row) do
       {
         'Venue' => 'Main Hall',
-        'Group Letter / Number' => 'A',
-        "Group Prefix\nCAL=\nCallaghan\nCC=\nCentral Coast\nALL=\nall campuses" => 'CAL',
+        "Students\nCAL-ALL= Entire Callaghan cohort\nCC-ALL = Entire CCoast cohort" => 'ALL',
         'Date' => '2024-04-11',
         'Time' => '10am-12pm',
-        'Name of Activity ' => 'Introduction Session',
+        'Session' => 'Introduction Session',
         'Domain' => 'Education',
         "Attendance\n(M =\nmandatory)" => 'M',
         'url' => 'www.example.com'
@@ -38,7 +37,7 @@ RSpec.describe Calendars::Uon::YearOne::CreateEventService do
 
       expect(event.dtstart).to eq Time.zone.local(2024, 0o4, 11, 10, 0o0, 0o0)
       expect(event.dtend).to eq Time.zone.local(2024, 0o4, 11, 12, 0o0, 0o0)
-      expect(event.summary).to eq 'Introduction Session - Education (A)'
+      expect(event.summary).to eq 'Introduction Session - Education (ALL)'
       expect(event.description).to eq nil
       expect(event.location).to eq 'Main Hall'
       expect(event.url.to_s).to eq 'www.example.com'
