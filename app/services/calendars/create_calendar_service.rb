@@ -1,8 +1,8 @@
-
+# frozen_string_literal: true
 
 module Calendars
   class CreateCalendarService
-    def self.call(pbl: nil, spreadsheet:, year:, clin: nil, uni: "uon")
+    def self.call(spreadsheet:, year:, pbl: nil, clin: nil, uni: 'uon')
       new(pbl, spreadsheet, year, clin, uni).call
     end
 
@@ -38,12 +38,12 @@ module Calendars
 
         Calendars::Uon::YearTwo::CreateEventService.call(pbl: pbl, row: row, calendar: calendar) if year == 2
         if year == 1
-          if uni == "uon"
+          if uni == 'uon'
             Calendars::Uon::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row,
-                                                     calendar: calendar)
-          elsif uni == "une"
+                                                             calendar: calendar)
+          elsif uni == 'une'
             Calendars::Une::YearOne::CreateEventService.call(pbl: pbl, clin: clin, row: row,
-                                                     calendar: calendar)
+                                                             calendar: calendar)
           end
         end
       end

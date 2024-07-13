@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 module Calendars
   module Uon
@@ -16,9 +16,8 @@ module Calendars
         end
 
         def call
-          group = row['Group Letter / Number']
           group_prefix = row[
-              "Group Prefix\nCAL=\nCallaghan\nCC=\nCentral Coast\nALL=\nall campuses"
+              "Students\nCAL-ALL= Entire Callaghan cohort\nCC-ALL = Entire CCoast cohort"
           ]
           mandatory = row["Attendance\n(M =\nmandatory)"]
           time = row['Time']
@@ -26,10 +25,10 @@ module Calendars
           date = row['Date']
           venue = row['Venue']
           url = row['url']
-          name = row['Name of Activity ']
+          name = row['Session']
 
-          return unless Calendars::Uon::YearOne::CheckValidEventService.is_valid?(group: group, pbl: pbl,
-                                                                                 clin: clin, group_prefix: group_prefix)
+          return unless Calendars::Uon::YearOne::CheckValidEventService.is_valid?(pbl: pbl,
+                                                                                  clin: clin, group_prefix: group_prefix)
           return if !venue && !date && !time
           return unless date > TZInfo::Timezone.get('Australia/Sydney').now
 
@@ -39,7 +38,7 @@ module Calendars
             name = "#{name} (not mandatory)"
           end
 
-          name = "#{name} - #{domain} (#{group})"
+          name = "#{name} - #{domain} (#{group_prefix})"
 
           calendar.event do |event|
             tzid = 'Australia/Sydney'

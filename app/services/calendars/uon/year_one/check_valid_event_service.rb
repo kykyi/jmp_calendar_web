@@ -1,15 +1,14 @@
-
+# frozen_string_literal: true
 
 module Calendars
   module Uon
     module YearOne
       class CheckValidEventService
-        def self.is_valid?(group:, pbl:, clin:, group_prefix:)
-          new(group, pbl, clin, group_prefix).call
+        def self.is_valid?(pbl:, clin:, group_prefix:)
+          new(pbl, clin, group_prefix).call
         end
 
-        def initialize(group, pbl, clin, group_prefix)
-          @group = group
+        def initialize(pbl, clin, group_prefix)
           @pbl = pbl
           @clin = clin
           @group_prefix = group_prefix
@@ -22,7 +21,6 @@ module Calendars
         private
 
         def is_valid?
-          @group = @group.downcase if @group
           @pbl = @pbl.downcase if @pbl
           @clin = @clin.downcase if @clin
           @group_prefix = @group_prefix.downcase if @group_prefix
@@ -30,23 +28,25 @@ module Calendars
           return true if @group_prefix == 'all'
 
           campus = if %w[a b c d].include?(@pbl) && %w[1 2 3 4].include?(@clin)
-                     'central coast'
+                     'cc'
                    else
-                     'callaghan'
+                     'cal'
                    end
 
-          return true if campus == 'callaghan' && @group_prefix == 'cal' && @group == 'all'
+          return true if campus == 'cc' && @group_prefix == 'cc-all'
 
-          return true if campus == 'central coast' && @group_prefix == 'cc' && @group == 'all'
+          return true if campus == 'cal' && @group_prefix == 'cal-all'
+          
+          if @group_prefix&.include?('pbl')
+            group_prefix = @group_prefix.gsub("pbl", "")
+            return true if group_prefix&.include?(@pbl)
+          end
 
-          return true if @group == @pbl
-
-          @group = @group&.split(/\W+/)
-
-          return true if @group&.include?('pbl') && @group&.include?(@pbl)
-
-          return true if @group&.include?('clin') && @group&.include?(@clin)
-
+          if @group_prefix&.include?('clin')
+            group_prefix = @group_prefix.gsub("clin", "")
+            return true if group_prefix&.include?(@clin)
+          end
+      
           false
         end
       end

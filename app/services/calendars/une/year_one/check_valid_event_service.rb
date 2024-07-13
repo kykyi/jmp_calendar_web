@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 module Calendars
   module Une
@@ -33,7 +33,7 @@ module Calendars
 
             part_one, part_two = @group.split('-')
 
-            return true if (part_one..part_two).include?(@pbl) or (part_one..part_two).include?(@clin)
+            return true if (part_one..part_two).include?(@pbl) || (part_one..part_two).include?(@clin)
           end
 
           return true if @group == @pbl

@@ -1,11 +1,10 @@
-
+# frozen_string_literal: true
 
 require 'rails_helper'
 
 RSpec.describe Calendars::CreateCalendarService do
   describe '.call' do
-
-    context "une" do
+    context 'une' do
       context 'year one' do
         let(:spreadsheet) { Roo::Excelx.new('spec/fixtures/files/test_timetable_year_one_une.xlsx') }
 
@@ -20,7 +19,7 @@ RSpec.describe Calendars::CreateCalendarService do
             expected_result = Icalendar::Calendar.parse(cal_file)
             expected_result = expected_result.first.to_ical
 
-            calendar = described_class.call(pbl: pbl, spreadsheet: spreadsheet, year: year, clin: clin, uni: "une")
+            calendar = described_class.call(pbl: pbl, spreadsheet: spreadsheet, year: year, clin: clin, uni: 'une')
             calendar.events.each { |event| event.uid = '00000000-0000-0000-0000-000000000000' }
 
             expect(expected_result).to eq(calendar.to_ical)
@@ -33,7 +32,7 @@ RSpec.describe Calendars::CreateCalendarService do
       end
     end
 
-    context "uon" do
+    context 'uon' do
       context 'year one' do
         let(:spreadsheet) { Roo::Excelx.new('spec/fixtures/files/test_timetable_year_one.xlsx') }
 

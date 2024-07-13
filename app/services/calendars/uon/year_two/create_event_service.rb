@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 module Calendars
   module Uon
@@ -26,7 +26,7 @@ module Calendars
           name = row['Session']
 
           return unless Calendars::Uon::YearTwo::CheckValidEventService.is_valid?(campus: campus, pbl: pbl,
-                                                                            group: group)
+                                                                                  group: group)
           return if !venue && !date && !time
           return unless date > TZInfo::Timezone.get('Australia/Sydney').now
 

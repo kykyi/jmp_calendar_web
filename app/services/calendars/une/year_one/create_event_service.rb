@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 module Calendars
   module Une
@@ -24,21 +24,18 @@ module Calendars
           venue = row['VENUE']
           name = row['SESSION']
 
-
-          return if !date
+          return unless date
 
           # Sometimes dates are invalid, like Feb 29 on a leap year, just ignore these
           begin
-            unless date.is_a? Date
-              date = Date.parse(date)
-            end
+            date = Date.parse(date) unless date.is_a? Date
             return unless date > TZInfo::Timezone.get('Australia/Sydney').now
           rescue Date::Error
             return
           end
 
           return unless Calendars::Une::YearOne::CheckValidEventService.is_valid?(group: group, pbl: pbl,
-                                                                                 clin: clin)
+                                                                                  clin: clin)
 
           if time.downcase.include?('self') && time.downcase.include?('directed')
             name = "#{name} (self directed)"
