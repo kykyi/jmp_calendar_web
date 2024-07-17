@@ -64,7 +64,7 @@ RSpec.describe Calendars::CreateCalendarService do
 
         before do
           Time.zone = 'Australia/Sydney'
-          travel_to Time.zone.local(2024, 0o4, 16, 0, 0, 0)
+          travel_to Time.zone.local(2024, 0o7, 14, 0, 0, 0)
         end
 
         shared_examples 'create calendar for' do |pbl, year, expected_result_file|
