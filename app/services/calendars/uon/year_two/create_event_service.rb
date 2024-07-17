@@ -18,7 +18,7 @@ module Calendars
           campus = row['Campus']
           group = row['Group']
           venue = row["Primary \nVenue/\nZoom Link"]
-          mandatory = row['Attendance'] == 'MAND' # the space
+          mandatory = row['Attendance'] == 'MAND' || row['Attendance'] == "MAND " # the space
           time = row['Time']
           date = row['Date']
           domain = row['Domain']
