@@ -39,12 +39,14 @@ module Calendars
           
           if @group_prefix&.include?('pbl')
             group_prefix = @group_prefix.gsub("pbl", "")
-            return true if group_prefix&.include?(@pbl)
+            prefixes = @group_prefix.gsub(/[^0-9a-zA-Z]/, ' ').split(" ")
+            return true if prefixes&.any? { |prefix| prefix == @pbl } 
           end
 
           if @group_prefix&.include?('clin')
             group_prefix = @group_prefix.gsub("clin", "")
-            return true if group_prefix&.include?(@clin)
+            prefixes = @group_prefix.gsub(/[^0-9a-zA-Z]/, ' ').split(" ")
+            return true if prefixes&.any? { |prefix| prefix == @clin } 
           end
       
           false

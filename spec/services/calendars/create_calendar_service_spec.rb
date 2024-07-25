@@ -21,7 +21,7 @@ RSpec.describe Calendars::CreateCalendarService do
 
             calendar = described_class.call(pbl: pbl, spreadsheet: spreadsheet, year: year, clin: clin, uni: 'une')
             calendar.events.each { |event| event.uid = '00000000-0000-0000-0000-000000000000' }
-
+            
             expect(expected_result).to eq(calendar.to_ical)
           end
         end
@@ -49,7 +49,7 @@ RSpec.describe Calendars::CreateCalendarService do
 
             calendar = described_class.call(pbl: pbl, spreadsheet: spreadsheet, year: year, clin: clin)
             calendar.events.each { |event| event.uid = '00000000-0000-0000-0000-000000000000' }
-
+            
             expect(expected_result).to eq(calendar.to_ical)
           end
         end

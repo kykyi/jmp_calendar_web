@@ -30,6 +30,9 @@ RSpec.describe Calendars::Uon::YearOne::CheckValidEventService do
     include_examples 'is_valid? for', 'D', '3', 'PBL: A', false
     include_examples 'is_valid? for', 'D', '3', 'CLIN: 2', false
     include_examples 'is_valid? for', 'D', '3', 'PBL: A+B+C+D', true
+    include_examples 'is_valid? for', 'D', '3', 'PBL: 4+D', true
+    include_examples 'is_valid? for', 'D', '3', 'CLIN: 3+4', true
+    include_examples 'is_valid? for', 'D', '3', 'CLIN: 13', false
     # Test cases for invalid inputs
     include_examples 'is_valid? for', 'bar', 'baz', 'gux', false
     include_examples 'is_valid? for', 'Z', '9', 'XYZ', false  # Completely outside defined criteria
