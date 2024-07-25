@@ -15,14 +15,10 @@ RSpec.describe Calendars::CreateCalendarService do
 
         shared_examples 'create calendar for' do |pbl, clin, year, expected_result_file|
           it 'creates the correct events' do
-            cal_file = File.open(expected_result_file)
-            expected_result = Icalendar::Calendar.parse(cal_file)
-            expected_result = expected_result.first.to_ical
-
-            calendar = described_class.call(pbl: pbl, spreadsheet: spreadsheet, year: year, clin: clin, uni: 'une')
-            calendar.events.each { |event| event.uid = '00000000-0000-0000-0000-000000000000' }
-            
-            expect(expected_result).to eq(calendar.to_ical)
+            expected_result = generate_calendar(expected_result_file)
+            calendar = fetch_calendar_fixture(pbl: pbl, spreadsheet: spreadsheet, year: year, clin: clin, uni: 'une')
+          
+            expect(expected_result).to eq(calendar)
           end
         end
 
@@ -43,14 +39,10 @@ RSpec.describe Calendars::CreateCalendarService do
 
         shared_examples 'create calendar for' do |pbl, clin, year, expected_result_file|
           it 'creates the correct events' do
-            cal_file = File.open(expected_result_file)
-            expected_result = Icalendar::Calendar.parse(cal_file)
-            expected_result = expected_result.first.to_ical
-
-            calendar = described_class.call(pbl: pbl, spreadsheet: spreadsheet, year: year, clin: clin)
-            calendar.events.each { |event| event.uid = '00000000-0000-0000-0000-000000000000' }
-            
-            expect(expected_result).to eq(calendar.to_ical)
+            expected_result = generate_calendar(expected_result_file)
+            calendar = fetch_calendar_fixture(pbl: pbl, spreadsheet: spreadsheet, year: year, clin: clin)
+          
+            expect(expected_result).to eq(calendar)
           end
         end
 
@@ -69,14 +61,10 @@ RSpec.describe Calendars::CreateCalendarService do
 
         shared_examples 'create calendar for' do |pbl, year, expected_result_file|
           it 'creates the correct events' do
-            cal_file = File.open(expected_result_file)
-            expected_result = Icalendar::Calendar.parse(cal_file)
-            expected_result = expected_result.first.to_ical
-
-            calendar = described_class.call(pbl: pbl, spreadsheet: spreadsheet, year: year)
-            calendar.events.each { |event| event.uid = '00000000-0000-0000-0000-000000000000' }
-
-            expect(expected_result).to eq(calendar.to_ical)
+            expected_result = generate_calendar(expected_result_file)
+            calendar = fetch_calendar_fixture(pbl: pbl, spreadsheet: spreadsheet, year: year)
+          
+            expect(expected_result).to eq(calendar)
           end
         end
 
@@ -85,5 +73,17 @@ RSpec.describe Calendars::CreateCalendarService do
         include_examples 'create calendar for', 'A', 2, 'spec/fixtures/files/example_three_year_two.ics'
       end
     end
+  end
+
+  def generate_calendar(expected_result_file)
+    cal_file = File.open(expected_result_file)
+    expected_result = Icalendar::Calendar.parse(cal_file)
+    expected_result.first.to_ical
+  end
+
+  def fetch_calendar_fixture(**kwargs)
+    calendar = described_class.call(**kwargs)
+    calendar.events.each { |event| event.uid = '00000000-0000-0000-0000-000000000000' }
+    calendar.to_ical
   end
 end
