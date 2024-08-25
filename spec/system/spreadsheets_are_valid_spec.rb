@@ -20,7 +20,7 @@ RSpec.describe 'Spreadsheets contain no errors' do
     let(:year) { 1 }
     let(:spreadsheet) do
       load_spreadsheet(uni, year,
-                       'MEDI1101B Timetable Week Pre-16 to 22 2024 - Callaghan & Central Coast v6.xlsx')
+                       'MEDI1101B Timetable Weeks Pre16 to 29 for Callaghan & Central Coast - 2024.xlsx')
     end
 
     ('1'..'20').to_a.each do |clin|

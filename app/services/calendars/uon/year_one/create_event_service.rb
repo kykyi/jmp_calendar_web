@@ -42,7 +42,6 @@ module Calendars
 
           calendar.event do |event|
             tzid = 'Australia/Sydney'
-
             event.dtstart = Icalendar::Values::DateTime.new(::TimeService.parse_time(date, time, true),
                                                             'tzid' => tzid)
             event.dtend = Icalendar::Values::DateTime.new(::TimeService.parse_time(date, time, false),
@@ -53,6 +52,8 @@ module Calendars
             # TODO: Add zoom links
             event.url = url if url
           end
+        rescue StandardError => e
+          Sentry.capture_exception(e)
         end
 
         private
