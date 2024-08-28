@@ -72,7 +72,7 @@ RSpec.describe 'Complete the landing form', type: :feature do
 
         select 'UON', from: 'uni_select'
         select '2', from: 'year_select'
-        select '2024 MEDI2101B Timetable - 30 Aug.xlsx', from: 'spreadsheet_select'
+        select 'Medi2101B timetable September 24.xlsx', from: 'spreadsheet_select'
         select 'K', from: 'pbl_select'
 
         click_on 'Submit'
@@ -88,7 +88,7 @@ RSpec.describe 'Complete the landing form', type: :feature do
 
         select 'UON', from: 'uni_select'
         select '2', from: 'year_select'
-        select '2024 MEDI2101B Timetable - 30 Aug.xlsx', from: 'spreadsheet_select'
+        select 'Medi2101B timetable September 24.xlsx', from: 'spreadsheet_select'
         choose 'user_input_exclude_pbl_and_clin_false'
 
         click_on 'Submit'

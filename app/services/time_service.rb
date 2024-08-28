@@ -13,7 +13,7 @@ class TimeService
 
     # Allow for silly times given in the time column
     time_str = '12pm - 1pm' if ['tba', 'self directed learning', 'self-directed', 'self directed',
-                                'as timetabled on canvas'].include?(time_str)
+                                'as timetabled on canvas', "please refer to \nosce timetable"].include?(time_str)
 
     start_time, end_time = if time_str.include?(' - ')
                              time_str.split(' - ')

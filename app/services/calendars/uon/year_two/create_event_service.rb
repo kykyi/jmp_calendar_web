@@ -51,6 +51,8 @@ module Calendars
             # TODO: Add zoom links
             # event.url = url if url
           end
+        rescue StandardError => e
+          Sentry.capture_exception(e)
         end
 
         private
