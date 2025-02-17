@@ -32,8 +32,8 @@ module Calendars
 
           if time.downcase.include?('self') && time.downcase.include?('directed')
             name = "#{name} (self directed)"
-          elsif !mandatory
-            name = "#{name} (not mandatory)"
+          elsif mandatory
+            name = "#{name} (mandatory)"
           end
 
           name = "#{name} #{typex} - #{domain} (#{campus})"
