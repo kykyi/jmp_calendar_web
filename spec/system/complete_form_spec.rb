@@ -34,7 +34,7 @@ RSpec.describe 'Complete the landing form', type: :feature do
 
         select 'UON', from: 'uni_select'
         select '1', from: 'year_select'
-        select 'MEDI1101B Timetable Weeks Pre16 to 29 for Callaghan & Central Coast - 2024 v9.xlsx',
+        select 'MEDI1101A Callaghan & Central Coast - Timetable - 2025 - Week 1&2 for Canvas.xlsx',
                from: 'spreadsheet_select'
         select 'K', from: 'pbl_select'
         select '20', from: 'clin_select'
@@ -52,7 +52,7 @@ RSpec.describe 'Complete the landing form', type: :feature do
 
         select 'UON', from: 'uni_select'
         select '1', from: 'year_select'
-        select 'MEDI1101B Timetable Weeks Pre16 to 29 for Callaghan & Central Coast - 2024 v9.xlsx',
+        select 'MEDI1101A Callaghan & Central Coast - Timetable - 2025 - Week 1&2 for Canvas.xlsx',
                from: 'spreadsheet_select'
         choose 'user_input_exclude_pbl_and_clin_false'
 
