@@ -17,12 +17,12 @@ module Calendars
         def call
           campus = row['Campus']
           group = row['Group']
-          venue = row["Primary \nVenue/\nZoom Link"]
-          mandatory = row['Attendance'] == 'MAND' || row['Attendance'] == "MAND " # the space
+          venue = row["Venue/\nZoom Link"]
+          mandatory = row['Attendance'] == 'MAND' || row['Attendance'] == "MAND " || row['Attendance '] == "MAND" # the space
           time = row['Time']
           date = row['Date']
           domain = row['Domain']
-          typex = row["Activity\n Type"]
+          typex = row["Type"]
           name = row['Session']
 
           return unless Calendars::Uon::YearTwo::CheckValidEventService.is_valid?(campus: campus, pbl: pbl,
