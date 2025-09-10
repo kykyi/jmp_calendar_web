@@ -72,7 +72,7 @@ RSpec.describe 'Complete the landing form', type: :feature do
 
         select 'UON', from: 'uni_select'
         select '2', from: 'year_select'
-        select '2025 MEDI2101B Timetable - CANVAS-c39e2298-64c2-42db-b8bb-94c8b80a3c3a.xlsx', from: 'spreadsheet_select'
+        select '2025 MEDI2101B Timetable - CANVAS-252cd8ae-0a58-40ab-b0bf-009ae64e2a49.xlsx', from: 'spreadsheet_select'
         select 'K', from: 'pbl_select'
 
         click_on 'Submit'
@@ -88,7 +88,7 @@ RSpec.describe 'Complete the landing form', type: :feature do
 
         select 'UON', from: 'uni_select'
         select '2', from: 'year_select'
-        select '2025 MEDI2101B Timetable - CANVAS-c39e2298-64c2-42db-b8bb-94c8b80a3c3a.xlsx', from: 'spreadsheet_select'
+        select '2025 MEDI2101B Timetable - CANVAS-252cd8ae-0a58-40ab-b0bf-009ae64e2a49.xlsx', from: 'spreadsheet_select'
         choose 'user_input_exclude_pbl_and_clin_false'
 
         click_on 'Submit'
